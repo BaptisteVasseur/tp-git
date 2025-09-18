@@ -1,0 +1,72 @@
+name: ✅ Vérifications Pull Request
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  check-pr:
+    runs-on: ubuntu-latest
+    name: Vérifier la Pull Request
+    
+    steps:
+    - name: 📥 Checkout
+      uses: actions/checkout@v3
+      
+    - name: 🔍 Vérification de la structure des commits
+      run: |
+        echo "🔍 Vérification des messages de commits..."
+        git log --oneline origin/main..HEAD | while read line; do
+          if [[ $line =~ ^[a-f0-9]+\ (feat|fix|docs|style|refactor|test|chore)(\(.+\))?:\ .+ ]] || [[ $line =~ ^[a-f0-9]+\ (✨|🐛|📝|💄|♻️|✅|🔧) ]]; then
+            echo "✅ Commit valide: $line"
+          else
+            echo "❌ Commit non conforme: $line"
+            echo "💡 Utilisez le format: 'type: description' ou les gitmoji"
+            exit 1
+          fi
+        done
+        
+    - name: 📁 Vérification de l'arborescence
+      run: |
+        echo "📁 Vérification de la structure des fichiers..."
+        
+        # Vérifier que les nouveaux fichiers HTML sont dans le bon dossier
+        if git diff --name-only origin/main..HEAD | grep -E "\.html$" | grep -v "^pages/" | grep -v "^index.html$"; then
+          echo "❌ Les fichiers HTML doivent être dans le dossier 'pages/' (sauf index.html)"
+          exit 1
+        fi
+        
+        # Vérifier que les CSS sont dans le bon dossier  
+        if git diff --name-only origin/main..HEAD | grep -E "\.css$" | grep -v "^css/"; then
+          echo "❌ Les fichiers CSS doivent être dans le dossier 'css/'"
+          exit 1
+        fi
+        
+        echo "✅ Structure des fichiers conforme"
+        
+    - name: 🔗 Vérification des liens
+      run: |
+        echo "🔗 Vérification des liens internes..."
+        
+        # Simple vérification que les liens relatifs existent
+        for file in $(find . -name "*.html"); do
+          echo "Vérification de $file..."
+          
+          # Extraire les liens href et src relatifs
+          grep -oE 'href="[^"]*"' "$file" | sed 's/href="//g; s/"//g' | while read link; do
+            if [[ $link =~ ^[^http] ]] && [[ $link != "#"* ]]; then
+              target_file=$(dirname "$file")/"$link"
+              if [ ! -f "$target_file" ]; then
+                echo "❌ Lien cassé dans $file: $link -> $target_file"
+                exit 1
+              fi
+            fi
+          done
+        done
+        
+        echo "✅ Liens vérifiés"
+        
+    - name: 🎉 Validation réussie
+      run: |
+        echo "🎉 Toutes les vérifications sont passées !"
+        echo "🚀 La Pull Request peut être mergée !"
