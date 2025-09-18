@@ -1,0 +1,64 @@
+name: 🚀 Build & Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    name: 🔍 Validation du code
+    
+    steps:
+    - name: 📥 Checkout
+      uses: actions/checkout@v4
+      
+    - name: 🔍 Validation HTML
+      uses: Cyb3r-Jak3/html5validator-action@v7.2.0
+      with:
+        root: ./
+        format: text
+        
+    - name: ✅ Validation réussie
+      run: echo "🎉 Code validé avec succès !"
+
+  # Job de déploiement
+  deploy:
+    needs: validate
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    name: 🚀 Déploiement
+    
+    steps:
+    - name: 📥 Checkout
+      uses: actions/checkout@v4
+      
+    - name: 🔧 Configuration des Pages
+      uses: actions/configure-pages@v5
+      
+    - name: 📦 Upload des fichiers
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: '.'
+        
+    - name: 🚀 Déploiement vers GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
+      
+    - name: 🎉 Succès du déploiement
+      run: |
+        echo "🌐 Site déployé avec succès !"
+        echo "📍 URL: ${{ steps.deployment.outputs.page_url }}"
+        echo "🔗 Votre wiki est maintenant en ligne !"
