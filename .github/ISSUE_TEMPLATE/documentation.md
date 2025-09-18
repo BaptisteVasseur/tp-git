@@ -27,3 +27,13 @@ Listez les fichiers de documentation à créer ou modifier.
 
 ---
 **Type :** README / Guide / Exemple / Autre
+
+
+# 1. Créer le projet
+gh project create --title "Wiki Collaboratif TP" --body "Suivi Kanban des contributions étudiantes"
+
+# 2. Lier au repository (remplacez PROJECT_NUMBER par le numéro affiché)
+gh project link PROJECT_NUMBER
+
+# 3. Ajouter toutes les issues
+gh issue list --json number | jq -r '.[] | .number' | xargs -I {} gh project item-add 2 --url https://github.com/baptistevasseur/tp-git/issues/{}
