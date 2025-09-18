@@ -223,8 +223,19 @@ Voici la liste des issues à créer manuellement sur GitHub une fois le reposito
 
 ## 🎯 Instructions pour créer les issues
 
+### ⚠️ PRÉREQUIS : Créer d'abord les labels !
+
+**Avant de créer les issues, exécutez :**
+```bash
+# Créer tous les 28 labels nécessaires
+./create-labels.sh
+```
+ou utilisez `commandes-labels.txt` pour copier-coller individuellement.
+
+### 📝 Création des issues
+
 1. **Titre :** Utilisez exactement les titres ci-dessus
-2. **Labels :** Ajoutez les labels indiqués
+2. **Labels :** Ajoutez les labels indiqués (ils doivent exister !)
 3. **Template :** Utilisez le template approprié (feature_request.md, bug_report.md, etc.)
 4. **Assignation :** Laissez vide au début, les étudiants s'assigneront
 5. **Milestone :** Créez un milestone "v1.0.0 - Wiki Complet"
@@ -264,7 +275,7 @@ Utilisez l'API GitHub ou créez-les manuellement dans Settings > Labels
 
 #### **Niveaux de difficulté**
 - `débutant` - #7057ff (violet)
-- `intermediate` - #fbca04 (jaune)
+- `intermédiaire` - #fbca04 (jaune)
 - `avancé` - #d4c5f9 (violet clair)
 
 #### **Domaines spécialisés**
@@ -283,15 +294,11 @@ Utilisez l'API GitHub ou créez-les manuellement dans Settings > Labels
 #### **Design et UX**
 - `design` - #e99695 (rose design)
 - `animation` - #f29513 (orange animation)
-- `ux` - #c5def5 (bleu UX)
+- `expérience-utilisateur` - #c5def5 (bleu UX)
 
 #### **Statuts et workflow**
-- `help wanted` - #008672 (vert foncé)
-- `priority-high` - #d73a4a (rouge priorité)
-- `priority-low` - #0e8a16 (vert priorité)
-- `blocked` - #6f42c1 (violet bloqué)
-- `duplicate` - #cfd3d7 (gris)
-- `wontfix` - #ffffff (blanc)
+- `aide-demandée` - #008672 (vert foncé)
+- `git` - #f05032 (orange Git)
 
 #### **Spécialisations avancées**
 - `frameworks` - #ff6b6b (rouge frameworks)
@@ -300,38 +307,34 @@ Utilisez l'API GitHub ou créez-les manuellement dans Settings > Labels
 - `expérience-dev` - #96ceb4 (vert menthe)
 - `débogage` - #ffa726 (orange debug)
 
-### 📝 Script de création des labels (GitHub CLI)
+### 🚀 Scripts de création automatique
 
+#### Option 1 : Script bash complet
 ```bash
-# Labels principaux
-gh label create "html" --color "e34c26" --description "HTML related issues"
-gh label create "css" --color "1572b6" --description "CSS styling issues"
-gh label create "javascript" --color "f7df1e" --description "JavaScript functionality"
-gh label create "accessibilité" --color "0366d6" --description "Accessibility improvements"
-gh label create "performance" --color "28a745" --description "Performance optimizations"
-gh label create "mobile" --color "f9d0c4" --description "Mobile responsiveness"
-gh label create "design" --color "e99695" --description "Visual design improvements"
-gh label create "animation" --color "f29513" --description "CSS/JS animations"
-gh label create "tests" --color "d876e3" --description "Testing related"
-gh label create "ci-cd" --color "1d76db" --description "CI/CD workflows"
-gh label create "automatisation" --color "0e8a16" --description "Process automatisation"
-gh label create "sécurité" --color "b60205" --description "Security improvements"
-gh label create "seo" --color "c2e0c6" --description "Search engine optimization"
-gh label create "frameworks" --color "ff6b6b" --description "Frontend frameworks"
-gh label create "outils-dev" --color "4ecdc4" --description "Development tools"
-gh label create "backend" --color "45b7d1" --description "Backend related"
-gh label create "expérience-dev" --color "96ceb4" --description "DX improvements"
-gh label create "débogage" --color "ffa726" --description "Debugging guides"
-gh label create "qualité-code" --color "bfd4f2" --description "Code quality tools"
-gh label create "intermediate" --color "fbca04" --description "Intermediate difficulty"
-gh label create "avancé" --color "d4c5f9" --description "Advanced topics"
+# Exécuter le script automatique
+chmod +x create-labels.sh
+./create-labels.sh
 ```
 
-### 📊 Statistiques des labels
+#### Option 2 : Commandes individuelles
+Voir le fichier `commandes-labels.txt` pour copier-coller les 28 commandes GitHub CLI.
 
-- **Total labels :** 25
-- **Labels techniques :** 8
-- **Labels difficulté :** 3  
-- **Labels processus :** 6
-- **Labels design :** 3
-- **Labels workflow :** 5
+### 📊 Statistiques des 28 labels
+
+| Catégorie | Quantité | Labels inclus |
+|-----------|----------|---------------|
+| **🔧 Technologies** | 3 | `html`, `css`, `javascript` |
+| **📋 Types d'issues** | 3 | `amélioration`, `bug`, `documentation` |
+| **🎚️ Niveaux** | 3 | `débutant`, `intermédiaire`, `avancé` |
+| **🌐 Domaines** | 6 | `accessibilité`, `performance`, `sécurité`, `seo`, `mobile`, `git` |
+| **🔧 Processus** | 4 | `ci-cd`, `automatisation`, `tests`, `qualité-code` |
+| **🎨 Design** | 3 | `design`, `animation`, `expérience-utilisateur` |
+| **🚀 Avancé** | 5 | `frameworks`, `outils-dev`, `backend`, `expérience-dev`, `débogage` |
+| **🚦 Workflow** | 1 | `aide-demandée` |
+| **TOTAL** | **28** | Tous les labels des 50 issues |
+
+### ✅ Validation post-création
+```bash
+# Vérifier que tous les labels sont créés
+gh label list --limit 50
+```
