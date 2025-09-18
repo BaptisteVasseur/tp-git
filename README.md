@@ -83,9 +83,6 @@ tp-git/
 │   └── ...                # Vos contributions !
 ├── assets/
 │   └── images/            # Images du wiki
-└── .github/
-    ├── ISSUE_TEMPLATE/    # Templates d'issues
-    └── workflows/         # Actions GitHub
 ```
 
 ## 📝 Comment contribuer
@@ -99,7 +96,7 @@ tp-git/
 ```bash
 # Assurez-vous d'être sur main et à jour
 git checkout main
-git pull upstream main
+git pull
 
 # Créez votre branche
 git checkout -b feature/ma-nouvelle-page
@@ -123,7 +120,7 @@ git push origin feature/ma-nouvelle-page
 
 2. Ouvrez une Pull Request sur GitHub
 3. Décrivez clairement vos modifications
-4. Liez votre PR à l'issue correspondante (ex: `Closes #5`)
+4. Liez votre PR à l'issue correspondante (ex: `Fonctionnalité #5`)
 
 ### Étape 5 : Review
 - Attendez qu'un autre étudiant review votre code
@@ -142,12 +139,6 @@ git push origin feature/ma-nouvelle-page
 - Créer et gérer les issues
 - Maintenir la qualité du code
 - Gérer les conflits et les releases
-
-## 🏷️ Gestion des versions
-
-- `v0.1.0` - Version initiale avec structure de base
-- `v0.5.0` - Milestone avec 50% des pages complétées
-- `v1.0.0` - Version finale avec toutes les contributions
 
 ## 🚫 Gitignore
 
