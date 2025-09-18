@@ -28,6 +28,8 @@ git config --global user.name "Votre Nom"
 git config --global user.email "votre.email@example.com"
 ```
 
+Oubliez pas d'enregistrer votre clé SSH sur votre compte github et de renseigner également votre clé GPG pour signer vos commits. (voir cours)
+
 ## 📋 Convention de travail
 
 ### 🌿 Nommage des branches
