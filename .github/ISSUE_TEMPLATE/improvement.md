@@ -2,7 +2,7 @@
 name: 🔧 Amélioration
 about: Proposer une amélioration du code ou du contenu existant
 title: "[IMPROVEMENT] "
-labels: enhancement
+labels: amélioration
 assignees: ''
 
 ---

@@ -2,7 +2,7 @@
 name: ✨ Nouvelle fonctionnalité
 about: Proposer une nouvelle page ou fonctionnalité pour le wiki
 title: "[FEATURE] "
-labels: enhancement, good first issue
+labels: amélioration, débutant
 assignees: ''
 
 ---
