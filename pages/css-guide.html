@@ -5,14 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guide CSS - Wiki de Classe</title>
     <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/menu.js" defer></script>
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">
-                <h1>📚 Wiki de Classe</h1>
+            <div class="nav-header">
+                <div class="logo">
+                    <a href="../index.html" class="logo-link">
+                        <h1>📚 Wiki de Classe</h1>
+                    </a>
+                </div>
+                <button class="burger-menu" aria-label="Menu" aria-expanded="false">
+                    <span class="burger-bar"></span>
+                    <span class="burger-bar"></span>
+                    <span class="burger-bar"></span>
+                </button>
             </div>
-            <ul class="nav-links">
+            <ul class="nav-links" id="nav-menu">
                 <li><a href="../index.html">Accueil</a></li>
                 <li><a href="index.html">Cours</a></li>
                 <li><a href="html-basics.html">HTML</a></li>
