@@ -221,6 +221,8 @@ footer p {
     
     .nav-links {
         gap: 1rem;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
     }
     
     main {
