@@ -1,0 +1,191 @@
+@charset "UTF-8";
+#toggleConst {
+  width: 40px;
+}
+
+/* 1) Système */
+@media (prefers-contrast: more), (forced-colors: active) {
+  body {
+    background-color: white;
+    color: black;
+  }
+  header {
+    border-bottom: 2px solid black;
+  }
+  .logo h1 {
+    color: black;
+  }
+  .nav-links a {
+    text-decoration: underline;
+    color: black;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    border: 2px solid black;
+    transition: var(--transition);
+  }
+  .nav-links a.active, .nav-links a:hover {
+    background-color: black;
+    color: white;
+  }
+  .hero {
+    background: linear-gradient(135deg, var(--secondary-color), black);
+    border: solid black 2px;
+  }
+  .card {
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border: 2px solid black;
+  }
+  .card h3 {
+    color: black;
+  }
+  .card p {
+    font-weight: 600;
+    color: black;
+  }
+  .card .btn {
+    background: black;
+    color: white;
+    font-weight: 600;
+  }
+  .stats {
+    border: 2px solid black;
+  }
+  .stats h3, .stats .stat .stat-number {
+    color: black;
+  }
+  footer {
+    background: black;
+  }
+  footer p {
+    color: white;
+    font-weight: 600;
+  }
+  .progress-section .progress-item {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    border: solid 2px black;
+  }
+  .progress-section .progress-item .progress-number {
+    color: black;
+  }
+  .course-card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    border: solid 2px black;
+    overflow: hidden;
+    transition: var(--transition);
+    border-left: 4px solid black;
+  }
+  .course-card .course-header {
+    background: linear-gradient(135deg, var(--secondary-color), black);
+  }
+  .course-card .course-header span {
+    background-color: white;
+    border: solid 2px black;
+    color: black;
+  }
+  .course-card .course-link {
+    background-color: black;
+    color: white;
+  }
+}
+/* 2) Toggle manuel */
+body.contraste body {
+  background-color: white;
+  color: black;
+}
+body.contraste header {
+  border-bottom: 2px solid black;
+}
+body.contraste .logo h1 {
+  color: black;
+}
+body.contraste .nav-links a {
+  text-decoration: underline;
+  color: black;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  border: 2px solid black;
+  transition: var(--transition);
+}
+body.contraste .nav-links a.active, body.contraste .nav-links a:hover {
+  background-color: black;
+  color: white;
+}
+body.contraste .hero {
+  background: linear-gradient(135deg, var(--secondary-color), black);
+  border: solid black 2px;
+}
+body.contraste .card {
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  border: 2px solid black;
+}
+body.contraste .card h3 {
+  color: black;
+}
+body.contraste .card p {
+  font-weight: 600;
+  color: black;
+}
+body.contraste .card .btn {
+  background: black;
+  color: white;
+  font-weight: 600;
+}
+body.contraste .stats {
+  border: 2px solid black;
+}
+body.contraste .stats h3, body.contraste .stats .stat .stat-number {
+  color: black;
+}
+body.contraste footer {
+  background: black;
+}
+body.contraste footer p {
+  color: white;
+  font-weight: 600;
+}
+body.contraste .progress-section .progress-item {
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  border: solid 2px black;
+}
+body.contraste .progress-section .progress-item .progress-number {
+  color: black;
+}
+body.contraste .course-card {
+  background: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  border: solid 2px black;
+  overflow: hidden;
+  transition: var(--transition);
+  border-left: 4px solid black;
+}
+body.contraste .course-card .course-header {
+  background: linear-gradient(135deg, var(--secondary-color), black);
+}
+body.contraste .course-card .course-header span {
+  background-color: white;
+  border: solid 2px black;
+  color: black;
+}
+body.contraste .course-card .course-link {
+  background-color: black;
+  color: white;
+}
+
+/*# sourceMappingURL=contraste.css.map */
