@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index des Cours - Wiki de Classe</title>
     <link rel="stylesheet" href="./../css/style.css">
+    <link rel="stylesheet" href="../css/contraste.css">
+    <link rel="stylesheet" href="../css/cours.css">
     <script src="./../js/menu.js" defer></script>
-   
 </head>
 <body>
     <header>
@@ -29,8 +30,12 @@
                 <li><a href="html-basics.html">HTML</a></li>
                 <li><a href="css-guide.html">CSS</a></li>
                 <li><a href="js-intro.html">JavaScript</a></li>
+                <li><a href="about.html">À propos</a></li>
             </ul>
+
+            <a href="#" onclick="toggleContraste()"><img id="toggleConst" src="../assets/images/visible.png" alt=""></a>
         </nav>
+
     </header>
 
     <main>
@@ -291,18 +296,7 @@
         <p>Fait avec ❤️ par les étudiants</p>
     </footer>
 
-    <script>
-        // Mise à jour dynamique des statistiques
-        document.addEventListener('DOMContentLoaded', function() {
-            // Compter les cours disponibles
-            const availableCourses = document.querySelectorAll('.status-in-progress, .status-available').length;
-            const totalCourses = document.querySelectorAll('.course-card').length;
-            const completion = Math.round((availableCourses / totalCourses) * 100);
-            
-            document.getElementById('available-courses').textContent = availableCourses;
-            document.getElementById('total-courses').textContent = totalCourses;
-            document.getElementById('completion').textContent = completion + '%';
-        });
-    </script>
+    <script src="../js/contraste.js"></script>
+    <script src="../js/cours.js"></script>
 </body>
 </html>
