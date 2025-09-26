@@ -1,13 +1,39 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bases HTML - Wiki de Classe</title>
-    <link rel="stylesheet" href="../css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../css/style.css" />
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+        padding: 0.3em;
+      }
+      pre {
+        background: #f4f4f4;
+        color: #222;
+        padding: 0.8em;
+        border-radius: 6px;
+        overflow-x: auto;
+        font-family: Consolas, Monaco, "Courier New", monospace;
+      }
+      .card {
+        margin-bottom: 2rem; /* espacement ajouté entre les cards */
+      }
+      @media (max-width: 600px) {
+        table {
+          font-size: 13px;
+        }
+      }
+    </style>
+  </head>
+  <body>
     <header>
+
         <nav>
         <div class="logo">
             <h1>📚 Wiki de Classe</h1>
@@ -21,39 +47,204 @@
                 <li><a href="about.html">À propos</a></li>
             </ul>
     </nav>
+
     </header>
 
     <main>
-        <section class="hero">
-            <h2>Bases HTML 🌐</h2>
-            <p>Découvrez les fondamentaux du langage de balisage HTML</p>
-        </section>
+      <section class="hero">
+        <h2>Bases HTML 🌐</h2>
+        <p>Découvrez les fondamentaux du langage de balisage HTML</p>
+      </section>
 
-        <section class="content">
-            <div class="card">
-                <h3>🚧 Page en construction</h3>
-                <p>Cette page sera complétée par les contributions des étudiants !</p>
-                <p><strong>Votre mission :</strong> Ajouter du contenu sur les bases HTML.</p>
-                
-                <h4>Suggestions de contenu à ajouter :</h4>
-                <ul>
-                    <li>Structure de base d'un document HTML</li>
-                    <li>Balises essentielles (h1-h6, p, div, span)</li>
-                    <li>Liens et images</li>
-                    <li>Listes ordonnées et non ordonnées</li>
-                    <li>Tableaux</li>
-                    <li>Formulaires</li>
-                    <li>Balises sémantiques HTML5</li>
-                </ul>
-                
-                <a href="https://github.com/baptistevasseur/tp-git/issues" class="btn">Contribuer maintenant</a>
-            </div>
-        </section>
+      <section class="content">
+        <div class="card">
+          <h3>🚧 Page en construction</h3>
+          <p>Cette page sera complétée par les contributions des étudiants !</p>
+          <p>
+            <strong>Votre mission :</strong> Ajouter du contenu sur les bases
+            HTML.
+          </p>
+          <h4>Suggestions de contenu à ajouter :</h4>
+          <ul>
+            <li>Structure de base d'un document HTML</li>
+            <li>Balises essentielles (h1-h6, p, div, span)</li>
+            <li>Liens et images</li>
+            <li>Listes ordonnées et non ordonnées</li>
+            <li>Tableaux</li>
+            <li>Formulaires</li>
+            <li>Balises sémantiques HTML5</li>
+          </ul>
+          <a href="https://github.com/baptistevasseur/tp-git/issues" class="btn"
+            >Contribuer maintenant</a
+          >
+        </div>
+
+        <!-- Contenu pédagogique -->
+        <div class="card">
+          <h3>Structure de base d’un document HTML</h3>
+          <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;title&gt;Titre&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    Contenu ici
+  &lt;/body&gt;
+&lt;/html&gt;
+              </pre
+          >
+        </div>
+
+        <div class="card">
+          <h3>Balises essentielles</h3>
+          <table>
+            <tr>
+              <th>Balise</th>
+              <th>Fonction</th>
+              <th>Exemple</th>
+            </tr>
+            <tr>
+              <td>&lt;h1&gt; à &lt;h6&gt;</td>
+              <td>Titres</td>
+              <td><pre>&lt;h2&gt;Sous-titre&lt;/h2&gt;</pre></td>
+            </tr>
+            <tr>
+              <td>&lt;p&gt;</td>
+              <td>Paragraphe</td>
+              <td><pre>&lt;p&gt;Texte&lt;/p&gt;</pre></td>
+            </tr>
+            <tr>
+              <td>&lt;div&gt;</td>
+              <td>Bloc</td>
+              <td><pre>&lt;div&gt;Zone&lt;/div&gt;</pre></td>
+            </tr>
+            <tr>
+              <td>&lt;span&gt;</td>
+              <td>En ligne</td>
+              <td><pre>&lt;span&gt;Mot&lt;/span&gt;</pre></td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="card">
+          <h3>Liens et images</h3>
+          <pre>
+&lt;a href="https://exemple.com"&gt;Un lien&lt;/a&gt;
+&lt;img src="https://via.placeholder.com/120" alt="Exemple"&gt;
+              </pre
+          >
+        </div>
+
+        <div class="card">
+          <h3>Listes ordonnées et non ordonnées</h3>
+          <pre>
+&lt;ul&gt;
+  &lt;li&gt;Un élément&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+  &lt;li&gt;Première étape&lt;/li&gt;
+&lt;/ol&gt;
+              </pre
+          >
+        </div>
+
+        <div class="card">
+          <h3>Tableaux</h3>
+          <pre>
+&lt;table&gt;
+  &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Nom&lt;/th&gt;&lt;th&gt;Âge&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;&lt;td&gt;Paul&lt;/td&gt;&lt;td&gt;22&lt;/td&gt;&lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+              </pre
+          >
+          <p>
+            Ajoute l’attribut <strong>&lt;caption&gt;</strong> pour
+            l’accessibilité.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Formulaires de base</h3>
+          <pre>
+&lt;form&gt;
+  &lt;label for="nom"&gt;Nom :&lt;/label&gt;
+  &lt;input type="text" id="nom" name="nom"&gt;
+  &lt;label for="mail"&gt;Email :&lt;/label&gt;
+  &lt;input type="email" id="mail" name="mail"&gt;
+  &lt;button type="submit"&gt;Envoyer&lt;/button&gt;
+&lt;/form&gt;
+              </pre
+          >
+        </div>
+
+        <div class="card">
+          <h3>Balises sémantiques HTML5</h3>
+          <table>
+            <tr>
+              <th>Balise</th>
+              <th>Usage</th>
+            </tr>
+            <tr>
+              <td>&lt;header&gt;</td>
+              <td>En-tête</td>
+            </tr>
+            <tr>
+              <td>&lt;nav&gt;</td>
+              <td>Navigation</td>
+            </tr>
+            <tr>
+              <td>&lt;main&gt;</td>
+              <td>Principal</td>
+            </tr>
+            <tr>
+              <td>&lt;section&gt;</td>
+              <td>Section</td>
+            </tr>
+            <tr>
+              <td>&lt;article&gt;</td>
+              <td>Article</td>
+            </tr>
+            <tr>
+              <td>&lt;footer&gt;</td>
+              <td>Pied de page</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="card">
+          <h3>Exemples interactifs</h3>
+          <button
+            onclick="document.getElementById('exemple').style.display='none'"
+          >
+            Masquer le texte
+          </button>
+          <div id="exemple" style="margin-top: 10px">
+            Ce texte peut être masqué
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Responsive & accessibilité</h3>
+          <ul>
+            <li>Code conforme W3C, responsive, mobile-friendly.</li>
+            <li>
+              Images avec <strong>alt</strong>, navigation clavier, balises
+              sémantiques.
+            </li>
+          </ul>
+        </div>
+        <!-- Fin ajout -->
+      </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Wiki de Classe - Projet pédagogique Git/GitHub</p>
-        <p>Fait avec ❤️ par les étudiants</p>
+      <p>&copy; 2025 Wiki de Classe - Projet pédagogique Git/GitHub</p>
+      <p>Fait avec ❤️ par les étudiants</p>
     </footer>
-</body>
+  </body>
 </html>
