@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/about.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/about.css">
+  <link rel="stylesheet" href="../css/icons.css">
   <title>À propos - Wiki collaboratif</title>
     
 </head>
@@ -13,7 +14,12 @@
 
     <nav>
         <div class="logo">
-            <h1>📚 Wiki de Classe</h1>
+            <h1>
+              <svg class="icon icon--md nav-icon icon--primary" aria-hidden="true">
+                <use href="#icon-courses"></use>
+              </svg>
+              Wiki de Classe
+            </h1>
         </div>
             <ul class="nav-links">
                 <li><a href="../index.html">Accueil</a></li>
@@ -69,6 +75,15 @@
 
   <footer>
     <p>&copy; 2025 Wiki collaboratif — Tous droits réservés</p>
+    <p>
+      Fait avec
+      <svg class="icon icon--sm icon--success" aria-hidden="true">
+        <use href="#icon-success"></use>
+      </svg>
+      par les étudiants
+    </p>
   </footer>
+</footer>
+<script src="../assets/js/icons.js"></script>
 </body>
 </html>
