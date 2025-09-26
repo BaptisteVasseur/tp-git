@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction aux tests unitaires en JavaScript</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f8fafc;
+        color: #22223b;
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        background: #22223b;
+        color: #fff;
+        padding: 1.5rem;
+        text-align: center;
+      }
+      main {
+        max-width: 900px;
+        margin: 2rem auto;
+        padding: 1rem;
+      }
+      section {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+      }
+      h1,
+      h2 {
+        color: #3a5a40;
+      }
+      h1 {
+        margin: 0;
+        font-size: 2rem;
+      }
+      h2 {
+        margin-top: 0;
+      }
+      ul {
+        padding-left: 1.2rem;
+      }
+      code {
+        background: #f3f4f6;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 1em;
+      }
+      pre {
+        background: #f3f4f6;
+        padding: 1em;
+        border-radius: 6px;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Introduction aux tests unitaires en JavaScript</h1>
+    </header>
+    <main>
+      <section>
+        <h2>1. Concepts de base des tests</h2>
+        <ul>
+          <li>
+            <strong>Test unitaire :</strong> Vérifie qu'une fonction ou un
+            module fonctionne comme attendu, isolément.
+          </li>
+          <li>
+            <strong>Test d'intégration :</strong> Vérifie que plusieurs modules
+            fonctionnent ensemble.
+          </li>
+          <li>
+            <strong>Test de bout en bout (E2E) :</strong> Vérifie le
+            fonctionnement global de l'application.
+          </li>
+          <li>
+            <strong>Avantages :</strong> Détection rapide des bugs, code plus
+            fiable, facilite la maintenance.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>2. Jest : le framework de test populaire</h2>
+        <ul>
+          <li>
+            <strong>Jest</strong> est un framework de test JavaScript développé
+            par Facebook.
+          </li>
+          <li>
+            Il permet d'écrire, d'exécuter et de structurer facilement des tests
+            unitaires.
+          </li>
+          <li>
+            Installation :
+            <pre><code>npm install --save-dev jest</code></pre>
+          </li>
+          <li>
+            Ajoutez dans <code>package.json</code> :
+            <pre><code>"scripts": {
+  "test": "jest"
+}</code></pre>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>3. Écrire des tests unitaires</h2>
+        <p>
+          Un test unitaire vérifie le comportement d'une fonction ou d'un
+          composant isolé.
+        </p>
+        <pre><code>// sum.js
+function sum(a, b) {
+  return a + b;
+}
+module.exports = sum;
+
+// sum.test.js
+const sum = require('./sum');
+test('additionne 1 + 2 pour donner 3', () => {
+  expect(sum(1, 2)).toBe(3);
+});
+</code></pre>
+        <p>Lancez les tests avec <code>npm test</code>.</p>
+      </section>
+
+      <section>
+        <h2>4. Mocking et assertions</h2>
+        <ul>
+          <li>
+            <strong>Mocking :</strong> Simuler des fonctions ou modules externes
+            pour tester un composant isolé.
+          </li>
+          <li>
+            <strong>Assertions :</strong> Vérifient que le résultat obtenu
+            correspond au résultat attendu.
+          </li>
+        </ul>
+        <pre><code>// Mock d'une fonction
+const myMock = jest.fn();
+myMock.mockReturnValue(42);
+expect(myMock()).toBe(42);
+
+// Assertion sur un tableau
+expect([1, 2, 3]).toContain(2);
+</code></pre>
+      </section>
+
+      <section>
+        <h2>5. Introduction au TDD (Test Driven Development)</h2>
+        <ul>
+          <li>
+            <strong>TDD</strong> : Écrire d'abord les tests, puis le code qui
+            les fait passer.
+          </li>
+          <li>
+            Cycle : <strong>Red</strong> (test échoue) →
+            <strong>Green</strong> (test passe) →
+            <strong>Refactor</strong> (amélioration du code).
+          </li>
+          <li>
+            Avantages : Code mieux conçu, moins de bugs, documentation vivante.
+          </li>
+        </ul>
+        <pre><code>// Exemple TDD
+// 1. Écrire le test (échoue)
+test('multiplie 2 x 3 pour donner 6', () => {
+  expect(multiply(2, 3)).toBe(6);
+});
+// 2. Écrire la fonction pour faire passer le test
+function multiply(a, b) {
+  return a * b;
+}
+</code></pre>
+      </section>
+    </main>
+  </body>
+</html>
