@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Outils de Build : Webpack, Vite, npm scripts</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #f9f9f9;
+        color: #333;
+        line-height: 1.6;
+      }
+      header {
+        background: #222;
+        color: #fff;
+        padding: 1rem;
+        text-align: center;
+      }
+      header h1 {
+        margin: 0;
+        font-size: 2rem;
+      }
+      main {
+        max-width: 1000px;
+        margin: auto;
+        padding: 2rem;
+      }
+      section {
+        background: #fff;
+        margin-bottom: 2rem;
+        padding: 1.5rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      h2 {
+        color: #005bbb;
+      }
+      pre {
+        background: #272822;
+        color: #f8f8f2;
+        padding: 1rem;
+        border-radius: 6px;
+        overflow-x: auto;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 1rem;
+      }
+      table caption {
+        caption-side: top;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+      table th,
+      table td {
+        border: 1px solid #ddd;
+        padding: 0.7rem;
+        text-align: center;
+      }
+      table th {
+        background: #005bbb;
+        color: white;
+      }
+      footer {
+        text-align: center;
+        padding: 1rem;
+        background: #222;
+        color: #fff;
+        margin-top: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Outils de Build : Webpack, Vite, npm scripts</h1>
+    </header>
+    <main>
+      <section>
+        <h2>1. Introduction</h2>
+        <p>
+          Les outils de build permettent d’optimiser le code, de gérer les
+          dépendances et d’améliorer l’expérience développeur. Voici une
+          comparaison entre <strong>Webpack</strong>, <strong>Vite</strong> et
+          <strong>npm scripts</strong>.
+        </p>
+      </section>
+      <section>
+        <h2>2. Webpack</h2>
+        <p>
+          <strong>Description :</strong> Module bundler puissant qui génère un
+          bundle optimisé.
+        </p>
+        <ul>
+          <li>
+            <strong>Avantages :</strong> Flexible, riche écosystème de plugins.
+          </li>
+          <li>
+            <strong>Inconvénients :</strong> Configuration lourde, builds lents.
+          </li>
+        </ul>
+        <pre><code>module.exports = {
+  entry: './src/index.js',
+  output: {
+    filename: 'bundle.js',
+    path: __dirname + '/dist',
+  },
+  module: {
+    rules: [
+      { test: /.css$/, use: ['style-loader', 'css-loader'] },
+    ],
+  },
+};</code></pre>
+      </section>
+      <section>
+        <h2>3. Vite</h2>
+        <p>
+          <strong>Description :</strong> Outil moderne basé sur ES Modules et
+          Rollup.
+        </p>
+        <ul>
+          <li>
+            <strong>Avantages :</strong> Ultra rapide, simple, HMR efficace.
+          </li>
+          <li><strong>Inconvénients :</strong> Moins flexible que Webpack.</li>
+        </ul>
+        <pre><code>{
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  }
+}</code></pre>
+      </section>
+      <section>
+        <h2>4. npm scripts</h2>
+        <p>
+          <strong>Description :</strong> Utilisation directe des scripts
+          <code>package.json</code> sans bundler.
+        </p>
+        <ul>
+          <li>
+            <strong>Avantages :</strong> Simple, aucun outil externe requis.
+          </li>
+          <li>
+            <strong>Inconvénients :</strong> Limité pour les projets complexes.
+          </li>
+        </ul>
+        <pre><code>{
+  "scripts": {
+    "lint": "eslint src/**/*.js",
+    "sass": "sass src/styles:dist/styles",
+    "build": "npm run lint && npm run sass"
+  }
+}</code></pre>
+      </section>
+      <section>
+        <h2>5. Comparaison rapide</h2>
+        <table>
+          <caption>
+            Comparatif des outils de build
+          </caption>
+          <thead>
+            <tr>
+              <th>Outil</th>
+              <th>Points forts</th>
+              <th>Points faibles</th>
+              <th>Cas d’usage idéal</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Webpack</td>
+              <td>Très puissant, écosystème riche</td>
+              <td>Configuration lourde, builds lents</td>
+              <td>Projets complexes et personnalisés</td>
+            </tr>
+            <tr>
+              <td>Vite</td>
+              <td>Rapide, moderne, facile</td>
+              <td>Moins flexible pour cas rares</td>
+              <td>Applications front modernes</td>
+            </tr>
+            <tr>
+              <td>npm scripts</td>
+              <td>Simple, léger</td>
+              <td>Pas de bundling avancé</td>
+              <td>Petits projets ou automatisation</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+    <footer>
+      <p>📦 Outils de Build : Webpack, Vite & npm scripts</p>
+    </footer>
+  </body>
+</html>
