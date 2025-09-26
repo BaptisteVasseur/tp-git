@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FAQ - Wiki de Classe</title>
     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/contraste.css" />
   </head>
   <body>
     <header>
@@ -19,7 +20,12 @@
           <li><a href="css-guide.html">CSS</a></li>
           <li><a href="js-intro.html">JavaScript</a></li>
           <li><a href="faq.html" class="active">FAQ</a></li>
+          <li><a href="about.html">À propos</a></li>
         </ul>
+
+        <a href="#" onclick="toggleContraste()"
+          ><img id="toggleConst" src="/assets/images/visible.png" alt=""
+        /></a>
       </nav>
     </header>
 
@@ -116,9 +122,8 @@ var ville = "Paris";</code></pre>
         <details>
           <summary>Comment contacter mon enseignant ?</summary>
           <p>
-            Envoyez un email à
-            baptistevasseur@mail.fr ou
-            prenez rendez-vous lors des heures de permanence.
+            Envoyez un email à baptistevasseur@mail.fr ou prenez rendez-vous
+            lors des heures de permanence.
           </p>
         </details>
       </section>
@@ -128,5 +133,6 @@ var ville = "Paris";</code></pre>
       <p>&copy; 2025 Wiki de Classe - Projet pédagogique Git/GitHub</p>
       <p>Fait avec ❤️ par les étudiants</p>
     </footer>
+    <script src="../js/contraste.js"></script>
   </body>
 </html>

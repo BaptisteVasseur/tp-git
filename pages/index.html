@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Index des Cours - Wiki de Classe</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/contraste.css">
+    <link rel="stylesheet" href="../css/cours.css">
+   
+</head>
+<body>
     <link rel="stylesheet" href="../css/style.css" />
     <style>
       .course-grid {
@@ -172,19 +178,24 @@
   </head>
   <body>
     <header>
-      <nav>
+        <nav>
         <div class="logo">
-          <h1>📚 Wiki de Classe</h1>
+            <h1>📚 Wiki de Classe</h1>
         </div>
-        <ul class="nav-links">
-          <li><a href="../index.html">Accueil</a></li>
-          <li><a href="index.html" class="active">Cours</a></li>
-          <li><a href="html-basics.html">HTML</a></li>
-          <li><a href="css-guide.html">CSS</a></li>
-          <li><a href="js-intro.html">JavaScript</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-        </ul>
-      </nav>
+            <ul class="nav-links">
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="index.html" class="active">Cours</a></li>
+                <li><a href="html-basics.html">HTML</a></li>
+                <li><a href="css-guide.html">CSS</a></li>
+                <li><a href="js-intro.html">JavaScript</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="about.html">À propos</a></li>
+            </ul>
+
+                       <a href="#"  onclick="toggleContraste()"><img id="toggleConst" src="/assets/images/visible.png" alt=""></a>
+
+        </nav>
+
     </header>
 
     <main>
@@ -489,4 +500,7 @@
       });
     </script>
   </body>
+    <script src="../js/contraste.js"></script>
+    <script src="../js/cours.js"></script>
+</body>
 </html>
