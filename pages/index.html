@@ -5,181 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index des Cours - Wiki de Classe</title>
     <link rel="stylesheet" href="../css/style.css">
-    <style>
-        .course-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-        
-        .course-card {
-            background: var(--white);
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            overflow: hidden;
-            transition: var(--transition);
-            border-left: 4px solid var(--primary-color);
-        }
-        
-        .course-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-        
-        .course-header {
-            padding: 1.5rem;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: var(--white);
-        }
-        
-        .course-title {
-            margin: 0;
-            font-size: 1.3rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .course-status {
-            font-size: 0.8rem;
-            opacity: 0.9;
-            margin-top: 0.5rem;
-        }
-        
-        .course-content {
-            padding: 1.5rem;
-        }
-        
-        .course-description {
-            color: var(--dark-gray);
-            margin-bottom: 1rem;
-            line-height: 1.6;
-        }
-        
-        .course-topics {
-            list-style: none;
-            padding: 0;
-            margin: 1rem 0;
-        }
-        
-        .course-topics li {
-            padding: 0.3rem 0;
-            position: relative;
-            padding-left: 1.5rem;
-        }
-        
-        .course-topics li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--success-color);
-            font-weight: bold;
-        }
-        
-        .course-link {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            background-color: var(--primary-color);
-            color: var(--white);
-            text-decoration: none;
-            border-radius: var(--border-radius);
-            transition: var(--transition);
-            font-weight: 500;
-            margin-top: 1rem;
-        }
-        
-        .course-link:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-2px);
-        }
-        
-        .course-link.disabled {
-            background-color: var(--light-gray);
-            color: var(--dark-gray);
-            cursor: not-allowed;
-            transform: none;
-        }
-        
-        .course-link.disabled:hover {
-            background-color: var(--light-gray);
-            transform: none;
-        }
-        
-        .status-badge {
-            display: inline-block;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            margin-left: 0.5rem;
-        }
-        
-        .status-available {
-            background-color: var(--success-color);
-            color: var(--white);
-        }
-        
-        .status-coming-soon {
-            background-color: var(--warning-color);
-            color: var(--white);
-        }
-        
-        .status-in-progress {
-            background-color: var(--primary-color);
-            color: var(--white);
-        }
-        
-        .progress-section {
-            background: var(--light-gray);
-            padding: 2rem;
-            border-radius: var(--border-radius);
-            margin: 2rem 0;
-            text-align: center;
-        }
-        
-        .progress-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 2rem;
-            margin-top: 1.5rem;
-        }
-        
-        .progress-item {
-            background: var(--white);
-            padding: 1.5rem;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-        }
-        
-        .progress-number {
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--primary-color);
-            display: block;
-        }
-        
-        .progress-label {
-            color: var(--dark-gray);
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/contraste.css">
+    <link rel="stylesheet" href="../css/cours.css">
+   
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">
-                <h1>📚 Wiki de Classe</h1>
-            </div>
+        <div class="logo">
+            <h1>📚 Wiki de Classe</h1>
+        </div>
             <ul class="nav-links">
                 <li><a href="../index.html">Accueil</a></li>
                 <li><a href="index.html" class="active">Cours</a></li>
                 <li><a href="html-basics.html">HTML</a></li>
                 <li><a href="css-guide.html">CSS</a></li>
                 <li><a href="js-intro.html">JavaScript</a></li>
+                <li><a href="about.html">À propos</a></li>
             </ul>
+
+                       <a href="#"  onclick="toggleContraste()"><img id="toggleConst" src="/assets/images/visible.png" alt=""></a>
+
         </nav>
+
     </header>
 
     <main>
@@ -440,18 +288,7 @@
         <p>Fait avec ❤️ par les étudiants</p>
     </footer>
 
-    <script>
-        // Mise à jour dynamique des statistiques
-        document.addEventListener('DOMContentLoaded', function() {
-            // Compter les cours disponibles
-            const availableCourses = document.querySelectorAll('.status-in-progress, .status-available').length;
-            const totalCourses = document.querySelectorAll('.course-card').length;
-            const completion = Math.round((availableCourses / totalCourses) * 100);
-            
-            document.getElementById('available-courses').textContent = availableCourses;
-            document.getElementById('total-courses').textContent = totalCourses;
-            document.getElementById('completion').textContent = completion + '%';
-        });
-    </script>
+    <script src="../js/contraste.js"></script>
+    <script src="../js/cours.js"></script>
 </body>
 </html>
