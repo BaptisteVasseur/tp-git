@@ -2,7 +2,7 @@
 
 function toggleContraste() {
   const body = document.body;
-  const monimage = document.getElementById("toggleConst");
+  const monimage = document.getElementById("toggleConstr");
    
     
   if (!body.classList.contains("contraste")) {
