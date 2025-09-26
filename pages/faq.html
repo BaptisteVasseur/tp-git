@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ - Wiki de Classe</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <h1>📚 Wiki de Classe</h1>
+        </div>
+        <ul class="nav-links">
+          <li><a href="../index.html">Accueil</a></li>
+          <li><a href="index.html">Cours</a></li>
+          <li><a href="html-basics.html">HTML</a></li>
+          <li><a href="css-guide.html">CSS</a></li>
+          <li><a href="js-intro.html">JavaScript</a></li>
+          <li><a href="faq.html" class="active">FAQ</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1>FAQ - Questions Fréquentes des Étudiants</h1>
+
+      <section>
+        <h2>Questions HTML/CSS courantes</h2>
+        <details>
+          <summary>Comment centrer un élément en CSS ?</summary>
+          <p>Pour centrer horizontalement : <code>margin: 0 auto;</code></p>
+          <p>Pour centrer verticalement et horizontalement avec flexbox :</p>
+          <pre><code>display: flex;
+justify-content: center;
+align-items: center;</code></pre>
+        </details>
+        <details>
+          <summary>
+            Quelle est la différence entre <code>id</code> et
+            <code>class</code> ?
+          </summary>
+          <p>
+            Un <code>id</code> est unique pour un élément, alors qu'une
+            <code>class</code> peut être utilisée sur plusieurs éléments.
+          </p>
+        </details>
+      </section>
+
+      <section>
+        <h2>Problèmes JavaScript fréquents</h2>
+        <details>
+          <summary>Pourquoi mon code JS ne s'exécute pas ?</summary>
+          <p>
+            Vérifiez que votre script est bien inclus et que le chemin est
+            correct. Placez votre script à la fin du <code>body</code> ou
+            utilisez <code>DOMContentLoaded</code>.
+          </p>
+        </details>
+        <details>
+          <summary>Comment déclarer une variable ?</summary>
+          <p>
+            Vous pouvez utiliser <code>let</code>, <code>const</code> ou
+            <code>var</code> :
+          </p>
+          <pre><code>let nom = "Alice";
+const age = 20;
+var ville = "Paris";</code></pre>
+        </details>
+      </section>
+
+      <section>
+        <h2>Debugging tips</h2>
+        <details>
+          <summary>Comment afficher des informations pour le debug ?</summary>
+          <p>
+            Utilisez <code>console.log()</code> pour afficher les valeurs et
+            <code>debugger;</code> pour arrêter l’exécution et inspecter le code
+            dans le navigateur.
+          </p>
+        </details>
+        <details>
+          <summary>Que faire si une erreur apparaît dans la console ?</summary>
+          <p>
+            Lire attentivement le message d’erreur, vérifier la ligne et la
+            syntaxe, et tester des solutions étape par étape.
+          </p>
+        </details>
+      </section>
+
+      <section>
+        <h2>Ressources supplémentaires</h2>
+        <details>
+          <summary>Où apprendre HTML/CSS/JS ?</summary>
+          <ul>
+            <li>
+              <a href="https://developer.mozilla.org/fr/" target="_blank"
+                >MDN Web Docs</a
+              >
+            </li>
+            <li>
+              <a href="https://www.w3schools.com/" target="_blank">W3Schools</a>
+            </li>
+            <li>
+              <a href="https://www.freecodecamp.org/" target="_blank"
+                >freeCodeCamp</a
+              >
+            </li>
+          </ul>
+        </details>
+      </section>
+
+      <section>
+        <h2>Contact enseignant</h2>
+        <details>
+          <summary>Comment contacter mon enseignant ?</summary>
+          <p>
+            Envoyez un email à
+            baptistevasseur@mail.fr ou
+            prenez rendez-vous lors des heures de permanence.
+          </p>
+        </details>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Wiki de Classe - Projet pédagogique Git/GitHub</p>
+      <p>Fait avec ❤️ par les étudiants</p>
+    </footer>
+  </body>
+</html>
