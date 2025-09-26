@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cours : Formulaires HTML avec Validation - Wiki de Classe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+        :root {
+            --primary-blue: #1a73e8;
+            --light-blue-gradient: linear-gradient(to right, #2196f3, #1a73e8);
+            --text-dark: #333;
+            --text-light: #555;
+            --bg-light: #f0f2f5;
+            --white: #fff;
+            --border-light: #e0e0e0;
+            --shadow-light: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-card: 0 4px 12px rgba(0,0,0,0.08);
+            --success-green: #28a745;
+            --error-red: #dc3545;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-light);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* --- Navbar --- */
+        .navbar {
+            background-color: var(--white);
+            box-shadow: var(--shadow-light);
+            padding: 1rem 2em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar .logo {
+            font-weight: 700;
+            color: var(--primary-blue);
+            font-size: 1.5em;
+            text-decoration: none;
+        }
+
+        .navbar .nav-links {
+            display: flex;
+        }
+
+        .navbar .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            padding: 0.5em 1em;
+            margin-left: 1em;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar .nav-links a.active,
+        .navbar .nav-links a:hover {
+            background-color: var(--primary-blue);
+            color: var(--white);
+        }
+
+        /* --- Header / Hero Section --- */
+        .hero-section {
+            background: var(--light-blue-gradient);
+            color: var(--white);
+            text-align: center;
+            padding: 4em 2em;
+            margin-bottom: 2em;
+            border-radius: 8px; /* Slightly rounded corners */
+            margin: 2em auto 0 auto; /* Centered with top margin */
+            max-width: 900px;
+            box-shadow: var(--shadow-card); /* Consistent shadow */
+        }
+
+        .hero-section h1 {
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+            font-weight: 600;
+        }
+
+        .hero-section p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .hero-section .icon {
+            margin-left: 10px;
+            vertical-align: middle;
+            font-size: 1.5em; /* Adjust icon size */
+        }
+
+        /* --- Main Content Container --- */
+        .content-container {
+            max-width: 900px;
+            margin: 2em auto;
+            background: var(--white);
+            padding: 2em;
+            border-radius: 8px;
+            box-shadow: var(--shadow-card);
+        }
+
+        h2, h3 {
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-top: 1.5em;
+            margin-bottom: 1em;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 0.5em;
+            padding-left: 1.5em;
+            position: relative;
+        }
+
+        ul li::before {
+            content: "•"; /* Bullet point */
+            color: var(--primary-blue);
+            font-size: 1.2em;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        code, pre {
+            background-color: var(--bg-light);
+            padding: 1em;
+            border-radius: 4px;
+            display: block;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-family: 'Fira Code', 'Cascadia Code', 'Consolas', monospace; /* Nicer font for code */
+            font-size: 0.9em;
+            color: var(--text-dark);
+            margin-bottom: 1em;
+        }
+
+        /* --- Form Styling (aligned with the new design) --- */
+        .form-section {
+            background: var(--bg-light); /* Lighter background for the form section */
+            padding: 2em;
+            border-radius: 8px;
+            margin-top: 2em;
+        }
+
+        .form-section h3 {
+            color: var(--text-dark); /* Darker heading for form */
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 0.8em;
+            margin-bottom: 1.5em;
+            text-align: center; /* Center form heading */
+        }
+
+        .form-group {
+            margin-bottom: 1.5em;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.6em;
+            font-weight: 600; /* Bolder labels */
+            color: var(--text-dark);
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 0.9em 1.2em; /* More padding */
+            border: 1px solid var(--border-light);
+            border-radius: 6px; /* Slightly more rounded */
+            box-sizing: border-box;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            font-size: 1em;
+            color: var(--text-dark);
+        }
+
+        input:focus {
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.2); /* Focus glow */
+            outline: none;
+        }
+
+        input:invalid:not(:placeholder-shown) {
+            border-color: var(--error-red);
+        }
+
+        .error-message {
+            color: var(--error-red);
+            font-size: 0.85em;
+            margin-top: 0.6em;
+            display: none;
+        }
+
+        input:invalid:not(:placeholder-shown) ~ .error-message {
+            display: block;
+        }
+
+        button[type="submit"] {
+            display: block; /* Make button full width */
+            width: 100%;
+            background-color: var(--primary-blue); /* Align with primary blue button style */
+            color: var(--white);
+            padding: 1em 2em;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 8px rgba(26, 115, 232, 0.3); /* Button shadow */
+        }
+
+        button[type="submit"]:hover {
+            background-color: #1a60cc; /* Slightly darker blue on hover */
+            transform: translateY(-2px); /* Slight lift effect */
+        }
+
+        /* --- Footer (Optional, but good practice) --- */
+        .footer {
+            background-color: var(--text-dark); /* Dark footer for contrast */
+            color: var(--white);
+            text-align: center;
+            padding: 1.5em;
+            margin-top: auto; /* Pushes footer to the bottom */
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="#" class="logo">Wiki de Classe</a>
+        <div class="nav-links">
+            <a href="#">Accueil</a>
+            <a href="#" class="active">Cours</a>
+            <a href="#">HTML</a>
+            <a href="#">CSS</a>
+            <a href="#">JavaScript</a>
+        </div>
+    </nav>
+
+    <header class="hero-section">
+        <h1>Apprenez les Formulaires HTML avec Validation <i class="fas fa-rocket icon"></i></h1>
+        <p>Maîtrisez la collecte de données utilisateurs et la validation côté client pour des formulaires robustes.</p>
+    </header>
+
+    <div class="content-container">
+        <h2>Introduction aux Formulaires HTML et à la Validation</h2>
+        <p>Les formulaires HTML sont la pierre angulaire de toute interaction utilisateur sur le web. Ils permettent de collecter des informations, que ce soit pour une inscription, une commande, ou une simple recherche. La <strong>validation</strong> est cruciale pour s'assurer que les données soumises sont correctes et utilisables.</p>
+        <p>HTML5 a révolutionné cette approche en introduisant des attributs de validation natifs, simplifiant grandement le processus et améliorant l'expérience utilisateur en fournissant un feedback immédiat.</p>
+
+        <h2>Les Attributs de Validation Clés en HTML5</h2>
+        <p>Explorons les attributs essentiels pour construire des formulaires intelligents et réactifs :</p>
+        <ul>
+            <li><code><strong>required</strong></code> : Cet attribut booléen rend un champ obligatoire. Le navigateur empêchera la soumission du formulaire si ce champ est vide.</li>
+            <li><code><strong>type</strong></code> : Au-delà de définir le type de saisie (texte, e-mail, mot de passe), cet attribut active également une validation spécifique. Par exemple, <code>type="email"</code> vérifiera le format d'une adresse e-mail.</li>
+            <li><code><strong>minlength</strong></code> et <code><strong>maxlength</strong></code> : Ces attributs définissent la longueur minimale et maximale des caractères acceptés dans un champ de texte.</li>
+            <li><code><strong>pattern</strong></code> : C'est l'attribut le plus puissant. Il vous permet de spécifier une <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Expressions_r%C3%A9guli%C3%A8res" target="_blank" style="color: var(--primary-blue);">expression régulière (regex)</a> pour imposer un format très précis (ex: un mot de passe complexe, un numéro de téléphone, un code postal).</li>
+        </ul>
+
+        <h2>Démonstration Interactive : Formulaire de Création de Compte</h2>
+        <div class="form-section">
+            <h3>Testez la Validation !</h3>
+            <p>Interagissez avec ce formulaire pour observer comment les règles de validation HTML5 se manifestent. Essayez de laisser des champs vides ou de saisir des informations incorrectes pour voir les messages d'erreur.</p>
+
+            <form action="#" method="post" novalidate> <div class="form-group">
+                    <label for="nom">Nom d'utilisateur :</label>
+                    <input type="text" id="nom" name="nom" required minlength="4" placeholder="Minimum 4 caractères">
+                    <span class="error-message">Le nom d'utilisateur doit avoir au moins 4 caractères.</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Adresse e-mail :</label>
+                    <input type="email" id="email" name="email" required placeholder="exemple@domaine.com">
+                    <span class="error-message">Veuillez entrer une adresse e-mail valide.</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Mot de passe :</label>
+                    <input type="password" id="password" name="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="8+ caractères, 1 majuscule, 1 minuscule, 1 chiffre">
+                    <span class="error-message">Le mot de passe doit contenir au moins 8 caractères avec au moins une majuscule, une minuscule et un chiffre.</span>
+                </div>
+
+                <button type="submit">S'inscrire</button>
+            </form>
+        </div>
+
+        <h2>Explication Détaillée du Code</h2>
+        <p>Le formulaire ci-dessus utilise les attributs suivants :</p>
+        <ul>
+            <li><strong>Nom d'utilisateur :</strong> <code>required</code> et <code>minlength="4"</code>. Le navigateur vérifiera que le champ n'est pas vide et contient au moins 4 caractères.</li>
+            <li><strong>Adresse e-mail :</strong> <code>required</code> et <code>type="email"</code>. Le navigateur validera à la fois la présence d'une valeur et son format d'e-mail.</li>
+            <li><strong>Mot de passe :</strong> <code>required</code> et <code>pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"</code>. L'expression régulière assure une robustesse : au moins un chiffre (<code>\d</code>), une minuscule (<code>a-z</code>), une majuscule (<code>A-Z</code>) et une longueur d'au moins 8 caractères (<code>.{8,}</code>).</li>
+        </ul>
+
+        <p>Le CSS joue un rôle clé en rendant les messages d'erreur visibles uniquement lorsque l'input est <code>:invalid</code> et que l'utilisateur a commencé à interagir avec (<code>:not(:placeholder-shown)</code> ou <code>:not(:focus)</code>).</p>
+
+        <h2>Pourquoi la Validation Côté Client est Importante ?</h2>
+        <p>La validation côté client offre plusieurs avantages :</p>
+        <ul>
+            <li><strong>Meilleure Expérience Utilisateur :</strong> Les retours immédiats aident les utilisateurs à corriger leurs erreurs sans attendre un rechargement de page.</li>
+            <li><strong>Réduction du Trafic Serveur :</strong> Moins de requêtes inutiles sont envoyées au serveur, car les données invalides sont filtrées en amont.</li>
+            <li><strong>Accessibilité :</strong> Les validations natives HTML5 sont généralement bien prises en charge par les technologies d'assistance.</li>
+        </ul>
+        <p>Cependant, il est crucial de noter que la validation côté client ne remplace <strong>JAMAIS</strong> la validation côté serveur. Un utilisateur malveillant peut toujours contourner la validation HTML. La validation côté serveur est votre dernière ligne de défense pour la sécurité et l'intégrité de vos données.</p>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2023 Wiki de Classe. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>
