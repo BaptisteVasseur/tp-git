@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animations CSS - Wiki de Classe</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* Zone d’exemples */
+    .demo-box {
+      margin: 20px 0;
+      padding: 20px;
+      border: 1px solid #ddd;
+      display: inline-block;
+    }
+
+    /* --- TRANSITIONS --- */
+    .demo-transition button {
+      background: #3498db;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.5s ease;
+    }
+    .demo-transition button:hover {
+      background: #2ecc71;
+      transform: scale(1.1);
+    }
+
+    /* --- TRANSFORMS --- */
+    .demo-transform .carre {
+      width: 100px;
+      height: 100px;
+      background: red;
+      transition: transform 0.5s ease;
+    }
+    .demo-transform .carre:hover {
+      transform: rotate(45deg) scale(1.2) translateX(20px);
+    }
+
+    /* --- KEYFRAMES (bounce) --- */
+    @keyframes bounce {
+      0%   { transform: translateY(0); }
+      30%  { transform: translateY(-50px); }
+      60%  { transform: translateY(-25px); }
+      100% { transform: translateY(0); }
+    }
+    .demo-keyframes .ball {
+      width: 50px;
+      height: 50px;
+      background: orange;
+      border-radius: 50%;
+      animation: bounce 1s ease infinite;
+    }
+
+    /* --- KEYFRAMES (fade-in) --- */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    .demo-keyframes .fade {
+      background: #9b59b6;
+      color: white;
+      padding: 10px 20px;
+      display: inline-block;
+      opacity: 0;
+      animation: fadeIn 2s ease forwards;
+    }
+
+    /* --- COMBINED EFFECTS --- */
+    @keyframes pulse {
+      0%   { transform: scale(1); }
+      50%  { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+    .demo-combined button {
+      background: #9b59b6;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      animation: pulse 2s infinite;
+    }
+    .demo-combined button:hover {
+      background: #8e44ad;
+      transform: rotate(5deg);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <h1>📚 Wiki de Classe</h1>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../index.html">Accueil</a></li>
+        <li><a href="index.html">Cours</a></li>
+        <li><a href="html-basics.html">HTML</a></li>
+        <li><a href="css-guide.html">CSS</a></li>
+        <li><a href="css-animations.html" class="active">Animations CSS</a></li>
+        <li><a href="js-intro.html">JavaScript</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h2>Animations CSS 🎬</h2>
+      <p>Un guide complet pour maîtriser <strong>transitions</strong>, <strong>transforms</strong> et <strong>keyframes</strong>.</p>
+    </section>
+
+    <section class="content">
+      <!-- TRANSITIONS -->
+      <div class="card">
+        <h3>⚡ Les Transitions</h3>
+        <p>Les transitions permettent de rendre le changement d’une propriété <strong>fluide</strong> plutôt qu’instantané.</p>
+        <p><strong>Syntaxe :</strong></p>
+        <pre><code>selector {
+  transition: propriété durée fonction_temporisation délai;
+}</code></pre>
+        <ul>
+          <li><strong>propriété</strong> : la propriété CSS à animer (ex: <code>color</code>, <code>background</code>, <code>all</code>)</li>
+          <li><strong>durée</strong> : temps de l’animation (ex: <code>0.5s</code>, <code>200ms</code>)</li>
+          <li><strong>fonction de temporisation</strong> : vitesse (ex: <code>linear</code>, <code>ease-in</code>, <code>ease-out</code>)</li>
+          <li><strong>délai</strong> : temps avant de démarrer (optionnel)</li>
+        </ul>
+        <p><strong>Exemple :</strong></p>
+        <pre><code>button {
+  transition: background 0.3s ease, transform 0.5s ease;
+}
+button:hover {
+  background: #2ecc71;
+  transform: scale(1.1);
+}</code></pre>
+        <div class="demo-box demo-transition">
+          <button>Survolez-moi</button>
+        </div>
+      </div>
+
+      <!-- TRANSFORMS -->
+      <div class="card">
+        <h3>🔄 Les Transforms</h3>
+        <p>La propriété <code>transform</code> permet de modifier la <strong>forme</strong> et la <strong>position</strong> d’un élément.</p>
+        <ul>
+          <li><code>translate(x, y)</code> : déplacer</li>
+          <li><code>scale(x, y)</code> : agrandir/réduire</li>
+          <li><code>rotate(deg)</code> : tourner</li>
+          <li><code>skew(x, y)</code> : incliner</li>
+        </ul>
+        <p><strong>Exemple :</strong></p>
+        <pre><code>.carre {
+  transition: transform 0.5s ease;
+}
+.carre:hover {
+  transform: rotate(45deg) scale(1.2) translateX(20px);
+}</code></pre>
+        <div class="demo-box demo-transform">
+          <div class="carre"></div>
+        </div>
+      </div>
+
+      <!-- KEYFRAMES -->
+      <div class="card">
+        <h3>🎬 Les Keyframes</h3>
+        <p>Les <strong>keyframes</strong> définissent des étapes d’animations plus complexes.</p>
+        <p><strong>Syntaxe :</strong></p>
+        <pre><code>@keyframes nom {
+  0%   { ... }
+  50%  { ... }
+  100% { ... }
+}
+.element {
+  animation: nom durée easing répétitions;
+}</code></pre>
+
+        <h4>➡️ Exemple : effet "bounce"</h4>
+        <pre><code>@keyframes bounce {
+  0%   { transform: translateY(0); }
+  30%  { transform: translateY(-50px); }
+  60%  { transform: translateY(-25px); }
+  100% { transform: translateY(0); }
+}
+.ball {
+  animation: bounce 1s ease infinite;
+}</code></pre>
+        <div class="demo-box demo-keyframes">
+          <div class="ball"></div>
+        </div>
+
+        <h4>➡️ Exemple : effet "fade-in"</h4>
+        <pre><code>@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.fade {
+  animation: fadeIn 2s ease forwards;
+}</code></pre>
+        <div class="demo-box demo-keyframes">
+          <span class="fade">Je s’affiche en fondu ✨</span>
+        </div>
+      </div>
+
+      <!-- COMBINED -->
+      <div class="card">
+        <h3>🧩 Combiner les effets</h3>
+        <p>On peut <strong>mélanger</strong> les transitions, transforms et keyframes pour obtenir des effets avancés.</p>
+        <p><strong>Exemple :</strong></p>
+        <pre><code>@keyframes pulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+button {
+  transition: background 0.3s ease;
+  animation: pulse 2s infinite;
+}
+button:hover {
+  background: #8e44ad;
+  transform: rotate(5deg);
+}</code></pre>
+        <div class="demo-box demo-combined">
+          <button>Essayez-moi</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Wiki de Classe - Projet pédagogique Git/GitHub</p>
+    <p>Fait avec ❤️ par les étudiants</p>
+  </footer>
+</body>
+</html>
