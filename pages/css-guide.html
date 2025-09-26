@@ -41,7 +41,104 @@
             <p>Apprenez à styliser vos pages web avec CSS</p>
         </section>
 
-        <section class="content">
+        <section id="syntax">
+            <h2>1. Syntaxe CSS de base</h2>
+            <p>Le CSS permet de styliser les pages HTML. Exemple :</p>
+            <pre><code>p {
+                color: blue;
+                font-size: 16px;
+            }</code></pre>
+        </section>
+
+        <section id="selectors">
+            <h2>2. Sélecteurs CSS</h2>
+            <ul>
+                <li><strong>Élément</strong> : <code>h1 { color: red; }</code></li>
+                <li><strong>Classe</strong> : <code>.ma-classe { font-weight: bold; }</code></li>
+                <li><strong>ID</strong> : <code>#mon-id { background: yellow; }</code></li>
+            </ul>
+        </section>
+
+        <section id="text-color">
+            <h2>3. Propriétés de texte et de couleur</h2>
+            <ul>
+                <li><code>color</code> : couleur du texte</li>
+                <li><code>background-color</code> : couleur de fond</li>
+                <li><code>font-size</code> : taille du texte</li>
+                <li><code>font-family</code> : police d’écriture</li>
+                <li><code>text-align</code> : alignement du texte</li>
+            </ul>
+            <pre><code>h2 {
+                color: #3498db;
+                background-color: #f0f0f0;
+                text-align: center;
+            }</code></pre>
+        </section>
+
+        <section id="box-model">
+            <h2>4. Box Model (margin, padding, border)</h2>
+            <ul>
+                <li><strong>margin</strong> : espace extérieur</li>
+                <li><strong>border</strong> : bordure</li>
+                <li><strong>padding</strong> : espace intérieur</li>
+                <li><strong>content</strong> : contenu</li>
+            </ul>
+            <img src="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model/box-model.png" alt="Schéma Box Model" style="max-width:300px;">
+            <pre><code>.box {
+                margin: 20px;
+                border: 2px solid #333;
+                padding: 10px;
+                background: #fafafa;
+            }</code></pre>
+        </section>
+
+        <section id="flexbox">
+            <h2>5. Bases de Flexbox</h2>
+            <pre><code>.container {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }</code></pre>
+            <div class="container" style="display: flex; gap: 10px; margin-top: 10px;">
+                <div style="background:#eee; padding:10px;">Élément 1</div>
+                <div style="background:#eee; padding:10px;">Élément 2</div>
+                <div style="background:#eee; padding:10px;">Élément 3</div>
+            </div>
+        </section>
+
+        <section id="positioning">
+            <h2>6. Positionnement</h2>
+            <ul>
+                <li><strong>static</strong> : position par défaut</li>
+                <li><strong>relative</strong> : décalage par rapport à la position normale</li>
+                <li><strong>absolute</strong> : positionné par rapport à l’élément parent le plus proche en position relative</li>
+            </ul>
+            <pre><code>.relative {
+                position: relative;
+                left: 20px;
+            }
+            .absolute {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+            }</code></pre>
+        </section>
+
+        <section id="responsive">
+            <h2>7. Styles Responsive</h2>
+            <p>Pour adapter le site à tous les écrans, utilisez les media queries :</p>
+            <pre><code>@media (max-width: 600px) {
+                body {
+                    font-size: 14px;
+                }
+                .container {
+                    flex-direction: column;
+                }
+            }</code></pre>
+        </section>
+
+        /<section class="content">
             <div class="card">
                 <h3>🚧 Page en construction</h3>
                 <p>Cette page sera complétée par les contributions des étudiants !</p>
@@ -61,7 +158,7 @@
                 
                 <a href="https://github.com/baptistevasseur/tp-git/issues" class="btn">Contribuer maintenant</a>
             </div>
-        </section>
+        </section>/
     </main>
 
     <footer>
