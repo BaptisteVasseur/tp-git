@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Index des Cours - Wiki de Classe</title>
-    <link rel="stylesheet" href="./../css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/contraste.css">
     <link rel="stylesheet" href="../css/cours.css">
-    <script src="./../js/menu.js" defer></script>
+    <script src="../js/menu.js" defer></script>
 </head>
 <body>
     <header>
@@ -32,271 +32,472 @@
                 <li><a href="js-intro.html">JavaScript</a></li>
                 <li><a href="about.html">À propos</a></li>
             </ul>
-
             <a href="#" onclick="toggleContraste()"><img id="toggleConst" src="../assets/images/visible.png" alt=""></a>
         </nav>
 
+        <a href="#" onclick="toggleContraste()"
+          ><img id="toggleConst" src="/assets/images/visible.png" alt=""
+        /></a>
+      </nav>
     </header>
 
     <main>
-        <section class="hero">
-            <h2>📖 Index des Cours Disponibles</h2>
-            <p>Découvrez tous les cours et tutoriels de développement web de notre wiki collaboratif</p>
-        </section>
+      <section class="hero">
+        <h2>📖 Index des Cours Disponibles</h2>
+        <p>
+          Découvrez tous les cours et tutoriels de développement web de notre
+          wiki collaboratif
+        </p>
+      </section>
 
-        <section class="progress-section">
-            <h3>📊 Progression du Wiki</h3>
-            <div class="progress-stats">
-                <div class="progress-item">
-                    <span class="progress-number" id="available-courses">3</span>
-                    <div class="progress-label">Cours disponibles</div>
-                </div>
-                <div class="progress-item">
-                    <span class="progress-number" id="total-courses">12</span>
-                    <div class="progress-label">Cours prévus</div>
-                </div>
-                <div class="progress-item">
-                    <span class="progress-number" id="contributors">20</span>
-                    <div class="progress-label">Contributeurs</div>
-                </div>
-                <div class="progress-item">
-                    <span class="progress-number" id="completion">25%</span>
-                    <div class="progress-label">Avancement</div>
-                </div>
+      <section class="progress-section">
+        <h3>📊 Progression du Wiki</h3>
+        <div class="progress-stats">
+          <div class="progress-item">
+            <span class="progress-number" id="available-courses">3</span>
+            <div class="progress-label">Cours disponibles</div>
+          </div>
+          <div class="progress-item">
+            <span class="progress-number" id="total-courses">12</span>
+            <div class="progress-label">Cours prévus</div>
+          </div>
+          <div class="progress-item">
+            <span class="progress-number" id="contributors">20</span>
+            <div class="progress-label">Contributeurs</div>
+          </div>
+          <div class="progress-item">
+            <span class="progress-number" id="completion">25%</span>
+            <div class="progress-label">Avancement</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content">
+        <h3>🚀 Cours Fondamentaux</h3>
+        <div class="course-grid">
+          <div class="course-card">
+            <div class="course-header">
+              <h4 class="course-title">
+                🌐 Bases HTML
+                <span class="status-badge status-in-progress">En cours</span>
+              </h4>
+              <div class="course-status">
+                Dernière mise à jour : En développement
+              </div>
             </div>
-        </section>
-
-        <section class="content">
-            <h3>🚀 Cours Fondamentaux</h3>
-            <div class="course-grid">
-                <div class="course-card">
-                    <div class="course-header">
-                        <h4 class="course-title">
-                            🌐 Bases HTML
-                            <span class="status-badge status-in-progress">En cours</span>
-                        </h4>
-                        <div class="course-status">Dernière mise à jour : En développement</div>
-                    </div>
-                    <div class="course-content">
-                        <p class="course-description">
-                            Apprenez les fondamentaux du HTML : structure, balises essentielles, sémantique et bonnes pratiques.
-                        </p>
-                        <ul class="course-topics">
-                            <li>Structure de base d'un document</li>
-                            <li>Balises essentielles (h1-h6, p, div)</li>
-                            <li>Liens et images</li>
-                            <li>Listes et tableaux</li>
-                        </ul>
-                        <a href="html-basics.html" class="course-link">Accéder au cours</a>
-                    </div>
-                </div>
-
-                <div class="course-card">
-                    <div class="course-header">
-                        <h4 class="course-title">
-                            🎨 Guide CSS
-                            <span class="status-badge status-in-progress">En cours</span>
-                        </h4>
-                        <div class="course-status">Dernière mise à jour : En développement</div>
-                    </div>
-                    <div class="course-content">
-                        <p class="course-description">
-                            Maîtrisez les styles CSS : sélecteurs, propriétés, layouts et responsive design.
-                        </p>
-                        <ul class="course-topics">
-                            <li>Syntaxe et sélecteurs CSS</li>
-                            <li>Box model et positionnement</li>
-                            <li>Flexbox et CSS Grid</li>
-                            <li>Design responsive</li>
-                        </ul>
-                        <a href="css-guide.html" class="course-link">Accéder au cours</a>
-                    </div>
-                </div>
-
-                <div class="course-card">
-                    <div class="course-header">
-                        <h4 class="course-title">
-                            ⚡ Introduction JavaScript
-                            <span class="status-badge status-in-progress">En cours</span>
-                        </h4>
-                        <div class="course-status">Dernière mise à jour : En développement</div>
-                    </div>
-                    <div class="course-content">
-                        <p class="course-description">
-                            Découvrez JavaScript : variables, fonctions, DOM et interactivité web.
-                        </p>
-                        <ul class="course-topics">
-                            <li>Variables et types de données</li>
-                            <li>Fonctions et événements</li>
-                            <li>Manipulation du DOM</li>
-                            <li>Interactivité utilisateur</li>
-                        </ul>
-                        <a href="js-intro.html" class="course-link">Accéder au cours</a>
-                    </div>
-                </div>
+            <div class="course-content">
+              <p class="course-description">
+                Apprenez les fondamentaux du HTML : structure, balises
+                essentielles, sémantique et bonnes pratiques.
+              </p>
+              <ul class="course-topics">
+                <li>Structure de base d'un document</li>
+                <li>Balises essentielles (h1-h6, p, div)</li>
+                <li>Liens et images</li>
+                <li>Listes et tableaux</li>
+              </ul>
+              <a href="html-basics.html" class="course-link"
+                >Accéder au cours</a
+              >
             </div>
+          </div>
 
-            <h3>🔥 Cours Avancés</h3>
-            <div class="course-grid">
-                <div class="course-card">
-                    <div class="course-header">
-                        <h4 class="course-title">
-                            📐 CSS Grid & Flexbox
-                            <span class="status-badge status-coming-soon">Bientôt</span>
-                        </h4>
-                        <div class="course-status">Contribution attendue</div>
-                    </div>
-                    <div class="course-content">
-                        <p class="course-description">
-                            Maîtrisez les layouts modernes avec CSS Grid et Flexbox pour des designs sophistiqués.
-                        </p>
-                        <ul class="course-topics">
-                            <li>CSS Grid avancé</li>
-                            <li>Flexbox en profondeur</li>
-                            <li>Layouts complexes</li>
-                            <li>Responsive avancé</li>
-                        </ul>
-                        <a href="#" class="course-link disabled">Bientôt disponible</a>
-                    </div>
-                </div>
-
-                <div class="course-card">
-                    <div class="course-header">
-                        <h4 class="course-title">
-                            📱 Responsive Design
-                            <span class="status-badge status-coming-soon">Bientôt</span>
-                        </h4>
-                        <div class="course-status">Contribution attendue</div>
-                    </div>
-                    <div class="course-content">
-                        <p class="course-description">
-                            Créez des sites qui s'adaptent parfaitement à tous les écrans et appareils.
-                        </p>
-                        <ul class="course-topics">
-                            <li>Mobile-first design</li>
-                            <li>Media queries avancées</li>
-                            <li>Images responsives</li>
-                            <li>Performance mobile</li>
-                        </ul>
-                        <a href="#" class="course-link disabled">Bientôt disponible</a>
-                    </div>
-                </div>
-
-                <div class="course-card">
-                    <div class="course-header">
-                        <h4 class="course-title">
-                            🎛️ JavaScript Avancé
-                            <span class="status-badge status-coming-soon">Bientôt</span>
-                        </h4>
-                        <div class="course-status">Contribution attendue</div>
-                    </div>
-                    <div class="course-content">
-                        <p class="course-description">
-                            Approfondissez JavaScript : APIs, asynchrone, modules et frameworks.
-                        </p>
-                        <ul class="course-topics">
-                            <li>Fetch API et AJAX</li>
-                            <li>Promises et async/await</li>
-                            <li>Modules ES6</li>
-                            <li>Introduction aux frameworks</li>
-                        </ul>
-                        <a href="#" class="course-link disabled">Bientôt disponible</a>
-                    </div>
-                </div>
+          <div class="course-card">
+            <div class="course-header">
+              <h4 class="course-title">
+                🎨 Guide CSS
+                <span class="status-badge status-in-progress">En cours</span>
+              </h4>
+              <div class="course-status">
+                Dernière mise à jour : En développement
+              </div>
             </div>
-
-            <h3>🛠️ Outils et Méthodologie</h3>
-            <div class="course-grid">
-                <div class="course-card">
-                    <div class="course-header">
-                        <h4 class="course-title">
-                            🔧 Git & GitHub
-                            <span class="status-badge status-coming-soon">Bientôt</span>
-                        </h4>
-                        <div class="course-status">Contribution attendue</div>
-                    </div>
-                    <div class="course-content">
-                        <p class="course-description">
-                            Maîtrisez le contrôle de version avec Git et la collaboration sur GitHub.
-                        </p>
-                        <ul class="course-topics">
-                            <li>Commandes Git essentielles</li>
-                            <li>Workflow GitHub</li>
-                            <li>Pull Requests et collaboration</li>
-                            <li>Résolution de conflits</li>
-                        </ul>
-                        <a href="#" class="course-link disabled">Bientôt disponible</a>
-                    </div>
-                </div>
-
-                <div class="course-card">
-                    <div class="course-header">
-                        <h4 class="course-title">
-                            ♿ Accessibilité Web
-                            <span class="status-badge status-coming-soon">Bientôt</span>
-                        </h4>
-                        <div class="course-status">Contribution attendue</div>
-                    </div>
-                    <div class="course-content">
-                        <p class="course-description">
-                            Créez des sites accessibles à tous avec les bonnes pratiques WCAG.
-                        </p>
-                        <ul class="course-topics">
-                            <li>Principes WCAG</li>
-                            <li>ARIA et sémantique</li>
-                            <li>Navigation clavier</li>
-                            <li>Tests d'accessibilité</li>
-                        </ul>
-                        <a href="#" class="course-link disabled">Bientôt disponible</a>
-                    </div>
-                </div>
-
-                <div class="course-card">
-                    <div class="course-header">
-                        <h4 class="course-title">
-                            🚀 Performance Web
-                            <span class="status-badge status-coming-soon">Bientôt</span>
-                        </h4>
-                        <div class="course-status">Contribution attendue</div>
-                    </div>
-                    <div class="course-content">
-                        <p class="course-description">
-                            Optimisez vos sites pour des performances maximales et une meilleure UX.
-                        </p>
-                        <ul class="course-topics">
-                            <li>Optimisation images</li>
-                            <li>Minification et compression</li>
-                            <li>Core Web Vitals</li>
-                            <li>Outils de mesure</li>
-                        </ul>
-                        <a href="#" class="course-link disabled">Bientôt disponible</a>
-                    </div>
-                </div>
+            <div class="course-content">
+              <p class="course-description">
+                Maîtrisez les styles CSS : sélecteurs, propriétés, layouts et
+                responsive design.
+              </p>
+              <ul class="course-topics">
+                <li>Syntaxe et sélecteurs CSS</li>
+                <li>Box model et positionnement</li>
+                <li>Flexbox et CSS Grid</li>
+                <li>Design responsive</li>
+              </ul>
+              <a href="css-guide.html" class="course-link">Accéder au cours</a>
             </div>
-        </section>
+          </div>
 
-        <section class="content">
-            <div class="card">
-                <h3>🤝 Contribuer au Wiki</h3>
-                <p>Ce wiki est collaboratif ! Chaque cours est créé par les étudiants de la classe.</p>
-                <p><strong>Comment contribuer :</strong></p>
-                <ul>
-                    <li>Choisissez une issue sur GitHub correspondant à un cours à créer</li>
-                    <li>Forkez le repository et créez votre branche</li>
-                    <li>Développez le contenu du cours avec exemples et exercices</li>
-                    <li>Soumettez une Pull Request pour review</li>
-                </ul>
-                <a href="https://github.com/baptistevasseur/tp-git/issues" class="btn">Voir les issues disponibles</a>
+          <div class="course-card">
+            <div class="course-header">
+              <h4 class="course-title">
+                ⚡ Introduction JavaScript
+                <span class="status-badge status-in-progress">En cours</span>
+              </h4>
+              <div class="course-status">
+                Dernière mise à jour : En développement
+              </div>
             </div>
-        </section>
+            <div class="course-content">
+              <p class="course-description">
+                Découvrez JavaScript : variables, fonctions, DOM et
+                interactivité web.
+              </p>
+              <ul class="course-topics">
+                <li>Variables et types de données</li>
+                <li>Fonctions et événements</li>
+                <li>Manipulation du DOM</li>
+                <li>Interactivité utilisateur</li>
+              </ul>
+              <a href="js-intro.html" class="course-link">Accéder au cours</a>
+            </div>
+          </div>
+        </div>
+
+        <h3>🔥 Cours Avancés</h3>
+        <div class="course-grid">
+          <div class="course-card">
+            <div class="course-header">
+              <h4 class="course-title">
+                📐 CSS Grid & Flexbox
+                <span class="status-badge status-coming-soon">Bientôt</span>
+              </h4>
+              <div class="course-status">Contribution attendue</div>
+            </div>
+            <div class="course-content">
+              <p class="course-description">
+                Maîtrisez les layouts modernes avec CSS Grid et Flexbox pour des
+                designs sophistiqués.
+              </p>
+              <ul class="course-topics">
+                <li>CSS Grid avancé</li>
+                <li>Flexbox en profondeur</li>
+                <li>Layouts complexes</li>
+                <li>Responsive avancé</li>
+              </ul>
+              <a href="#" class="course-link disabled">Bientôt disponible</a>
+            </div>
+          </div>
+
+          <div class="course-card">
+            <div class="course-header">
+              <h4 class="course-title">
+                📱 Responsive Design
+                <span class="status-badge status-coming-soon">Bientôt</span>
+              </h4>
+              <div class="course-status">Contribution attendue</div>
+            </div>
+            <div class="course-content">
+              <p class="course-description">
+                Créez des sites qui s'adaptent parfaitement à tous les écrans et
+                appareils.
+              </p>
+              <ul class="course-topics">
+                <li>Mobile-first design</li>
+                <li>Media queries avancées</li>
+                <li>Images responsives</li>
+                <li>Performance mobile</li>
+              </ul>
+              <a href="#" class="course-link disabled">Bientôt disponible</a>
+            </div>
+          </div>
+
+          <div class="course-card">
+            <div class="course-header">
+              <h4 class="course-title">
+                🎛️ JavaScript Avancé
+                <span class="status-badge status-coming-soon">Bientôt</span>
+              </h4>
+              <div class="course-status">Contribution attendue</div>
+            </div>
+            <div class="course-content">
+              <p class="course-description">
+                Approfondissez JavaScript : APIs, asynchrone, modules et
+                frameworks.
+              </p>
+              <ul class="course-topics">
+                <li>Fetch API et AJAX</li>
+                <li>Promises et async/await</li>
+                <li>Modules ES6</li>
+                <li>Introduction aux frameworks</li>
+              </ul>
+              <a href="#" class="course-link disabled">Bientôt disponible</a>
+            </div>
+          </div>
+        </div>
+
+        <h3>🛠️ Outils et Méthodologie</h3>
+        <div class="course-grid">
+          <div class="course-card">
+            <div class="course-header">
+              <h4 class="course-title">
+                🔧 Git & GitHub
+                <span class="status-badge status-coming-soon">Bientôt</span>
+              </h4>
+              <div class="course-status">Contribution attendue</div>
+            </div>
+            <div class="course-content">
+              <p class="course-description">
+                Maîtrisez le contrôle de version avec Git et la collaboration
+                sur GitHub.
+              </p>
+              <ul class="course-topics">
+                <li>Commandes Git essentielles</li>
+                <li>Workflow GitHub</li>
+                <li>Pull Requests et collaboration</li>
+                <li>Résolution de conflits</li>
+              </ul>
+              <a href="#" class="course-link disabled">Bientôt disponible</a>
+            </div>
+          </div>
+
+          <div class="course-card">
+            <div class="course-header">
+              <h4 class="course-title">
+                ♿ Accessibilité Web
+                <span class="status-badge status-coming-soon">Bientôt</span>
+              </h4>
+              <div class="course-status">Contribution attendue</div>
+            </div>
+            <div class="course-content">
+              <p class="course-description">
+                Créez des sites accessibles à tous avec les bonnes pratiques
+                WCAG.
+              </p>
+              <ul class="course-topics">
+                <li>Principes WCAG</li>
+                <li>ARIA et sémantique</li>
+                <li>Navigation clavier</li>
+                <li>Tests d'accessibilité</li>
+              </ul>
+              <a href="#" class="course-link disabled">Bientôt disponible</a>
+            </div>
+          </div>
+
+          <div class="course-card">
+            <div class="course-header">
+              <h4 class="course-title">
+                🚀 Performance Web
+                <span class="status-badge status-coming-soon">Bientôt</span>
+              </h4>
+              <div class="course-status">Contribution attendue</div>
+            </div>
+            <div class="course-content">
+              <p class="course-description">
+                Optimisez vos sites pour des performances maximales et une
+                meilleure UX.
+              </p>
+              <ul class="course-topics">
+                <li>Optimisation images</li>
+                <li>Minification et compression</li>
+                <li>Core Web Vitals</li>
+                <li>Outils de mesure</li>
+              </ul>
+              <a href="#" class="course-link disabled">Bientôt disponible</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content">
+        <div class="card">
+          <h3>🤝 Contribuer au Wiki</h3>
+          <p>
+            Ce wiki est collaboratif ! Chaque cours est créé par les étudiants
+            de la classe.
+          </p>
+          <p><strong>Comment contribuer :</strong></p>
+          <ul>
+            <li>
+              Choisissez une issue sur GitHub correspondant à un cours à créer
+            </li>
+            <li>Forkez le repository et créez votre branche</li>
+            <li>Développez le contenu du cours avec exemples et exercices</li>
+            <li>Soumettez une Pull Request pour review</li>
+          </ul>
+          <a href="https://github.com/baptistevasseur/tp-git/issues" class="btn"
+            >Voir les issues disponibles</a
+          >
+        </div>
+      </section>
     </main>
 
-    <footer>
-        <p>&copy; 2025 Wiki de Classe - Projet pédagogique Git/GitHub</p>
-        <p>Fait avec ❤️ par les étudiants</p>
+    <footer
+      id="site-footer"
+      class="site-footer"
+      role="contentinfo"
+      aria-label="Pied de page"
+    >
+      <div class="footer-inner">
+        <!-- Liens GitHub -->
+        <nav class="footer-links" aria-label="Liens du projet">
+          <div class="links-column">
+            <h3>GitHubb</h3>
+            <ul>
+              <li>
+                <a
+                  id="repo-link"
+                  href="https://github.com/baptistevasseur/tp-git"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Dépôt du projet</a
+                >
+              </li>
+              <li>
+                <a
+                  id="org-link"
+                  href="https://github.com/baptistevasseur"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Profil / Organisation</a
+                >
+              </li>
+              <li>
+                <a
+                  id="readme-link"
+                  href="https://github.com/baptistevasseur/tp-git#readme"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >README</a
+                >
+              </li>
+              <li>
+                <a
+                  id="issues-link"
+                  href="https://github.com/baptistevasseur/tp-git/issues"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Issues</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Liens utiles (peuvent pointer vers des pages internes) -->
+          <div class="links-column">
+            <h3>Liens utiles</h3>
+            <ul>
+              <li><a href="#">Guide de style</a></li>
+              <li><a href="#">Rendu / Consignes</a></li>
+              <li><a href="#">CI / Pipeline</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact enseignant (statique HTML) -->
+          <div class="links-column contact-col">
+            <h3>Contact</h3>
+            <p id="teacher-name">Enseignant: M.Baptiste Vasseur</p>
+            <p>
+              <a id="teacher-mail" class="mail-link" href="#"
+                >Baptiste Vasseur@decode.fr</a
+              >
+            </p>
+            <!-- bouton modal disponible mais sans JS il ne s'ouvrira pas — utile quand on ajoutera le script -->
+            <button
+              id="contact-btn"
+              class="btn"
+              aria-haspopup="dialog"
+              aria-controls="contact-modal"
+            >
+              Formulaire de contact
+            </button>
+          </div>
+        </nav>
+
+        <!-- Statistiques (placeholders, remplissables par JS plus tard) -->
+        <div class="footer-stats" aria-live="polite">
+          <h3>Statistiques</h3>
+          <div class="stats-grid">
+            <div class="stat">
+              <strong id="stars">—</strong>
+              <span>Stars</span>
+            </div>
+            <div class="stat">
+              <strong id="forks">—</strong>
+              <span>Forks</span>
+            </div>
+            <div class="stat">
+              <strong id="open-issues">—</strong>
+              <span>Open issues</span>
+            </div>
+            <div class="stat">
+              <strong id="last-commit">—</strong>
+              <span>Dernier commit</span>
+            </div>
+          </div>
+
+          <!-- Icônes sociales -->
+          <div class="socials" aria-label="Réseaux sociaux">
+            <a
+              id="github-icon"
+              href="https://github.com/baptistevasseur/tp-git"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social"
+              aria-label="Voir le dépôt GitHub"
+            >
+              <!-- SVG GitHub (inline pour éviter dépendances) -->
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                role="img"
+                aria-hidden="true"
+              >
+                <path
+                  fill="currentColor"
+                  d="M12 .5C5.73.5.75 5.48.75 11.75c0 4.9 3.17 9.06 7.57 10.53.55.1.75-.24.75-.54v-1.9c-3.07.66-3.72-1.36-3.72-1.36-.5-1.28-1.22-1.62-1.22-1.62-.99-.68.08-.67.08-.67 1.09.08 1.66 1.12 1.66 1.12.97 1.66 2.55 1.18 3.17.9.1-.7.38-1.18.7-1.45-2.45-.28-5.03-1.22-5.03-5.43 0-1.2.43-2.18 1.13-2.95-.12-.28-.5-1.41.11-2.94 0 0 .92-.29 3.02 1.13A10.48 10.48 0 0112 6.8c.93.004 1.87.12 2.75.35 2.09-1.42 3.01-1.13 3.01-1.13.61 1.53.23 2.66.11 2.94.7.77 1.13 1.75 1.13 2.95 0 4.22-2.59 5.15-5.05 5.42.39.34.73 1.01.73 2.04v3.03c0 .3.2.65.76.54A11.25 11.25 0 0023.25 11.75C23.25 5.48 18.27.5 12 .5z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Markup modal (HTML seulement) : restera inerte sans JS, mais utile pour accessibilité / futur JS -->
+      <div
+        id="contact-modal"
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-hidden="true"
+        aria-labelledby="contact-title"
+      >
+        <div class="modal-inner">
+          <h2 id="contact-title">Contacter l'enseignant</h2>
+          <p id="modal-teacher">M. Dupont — dupont@ecole.fr</p>
+          <form id="contact-form">
+            <label
+              >Votre nom
+              <input name="name" required />
+            </label>
+            <label
+              >Votre email
+              <input name="email" type="email" required />
+            </label>
+            <label
+              >Message
+              <textarea name="message" rows="4" required></textarea>
+            </label>
+            <div class="modal-actions">
+              <button type="submit" class="btn-primary">Envoyer</button>
+              <button type="button" id="modal-close" class="btn">Fermer</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Version texte simple (fallback) -->
+      <div class="footer-copy">
+        <p>
+          &copy; 2025 Wiki de Classe — Projet pédagogique Git/GitHub. Fait avec
+          ♥ par les étudiants.
+        </p>
+      </div>
     </footer>
+
+    <div id="footer-placeholder"></div>
 
     <script src="../js/contraste.js"></script>
     <script src="../js/cours.js"></script>
-</body>
+  </body>
 </html>
