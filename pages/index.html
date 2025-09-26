@@ -5,166 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index des Cours - Wiki de Classe</title>
     <link rel="stylesheet" href="../css/style.css">
-    <style>
-        .course-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-        
-        .course-card {
-            background: var(--white);
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            overflow: hidden;
-            transition: var(--transition);
-            border-left: 4px solid var(--primary-color);
-        }
-        
-        .course-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-        
-        .course-header {
-            padding: 1.5rem;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: var(--white);
-        }
-        
-        .course-title {
-            margin: 0;
-            font-size: 1.3rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .course-status {
-            font-size: 0.8rem;
-            opacity: 0.9;
-            margin-top: 0.5rem;
-        }
-        
-        .course-content {
-            padding: 1.5rem;
-        }
-        
-        .course-description {
-            color: var(--dark-gray);
-            margin-bottom: 1rem;
-            line-height: 1.6;
-        }
-        
-        .course-topics {
-            list-style: none;
-            padding: 0;
-            margin: 1rem 0;
-        }
-        
-        .course-topics li {
-            padding: 0.3rem 0;
-            position: relative;
-            padding-left: 1.5rem;
-        }
-        
-        .course-topics li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--success-color);
-            font-weight: bold;
-        }
-        
-        .course-link {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            background-color: var(--primary-color);
-            color: var(--white);
-            text-decoration: none;
-            border-radius: var(--border-radius);
-            transition: var(--transition);
-            font-weight: 500;
-            margin-top: 1rem;
-        }
-        
-        .course-link:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-2px);
-        }
-        
-        .course-link.disabled {
-            background-color: var(--light-gray);
-            color: var(--dark-gray);
-            cursor: not-allowed;
-            transform: none;
-        }
-        
-        .course-link.disabled:hover {
-            background-color: var(--light-gray);
-            transform: none;
-        }
-        
-        .status-badge {
-            display: inline-block;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            margin-left: 0.5rem;
-        }
-        
-        .status-available {
-            background-color: var(--success-color);
-            color: var(--white);
-        }
-        
-        .status-coming-soon {
-            background-color: var(--warning-color);
-            color: var(--white);
-        }
-        
-        .status-in-progress {
-            background-color: var(--primary-color);
-            color: var(--white);
-        }
-        
-        .progress-section {
-            background: var(--light-gray);
-            padding: 2rem;
-            border-radius: var(--border-radius);
-            margin: 2rem 0;
-            text-align: center;
-        }
-        
-        .progress-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 2rem;
-            margin-top: 1.5rem;
-        }
-        
-        .progress-item {
-            background: var(--white);
-            padding: 1.5rem;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-        }
-        
-        .progress-number {
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--primary-color);
-            display: block;
-        }
-        
-        .progress-label {
-            color: var(--dark-gray);
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -183,44 +23,49 @@
     </header>
 
     <main>
-        <section class="hero">
-            <h2>📖 Index des Cours Disponibles</h2>
-            <p>Découvrez tous les cours et tutoriels de développement web de notre wiki collaboratif</p>
+        <section class="hero" aria-labelledby="courses-hero-title">
+            <h1 id="courses-hero-title">📖 Index des Cours Disponibles</h1>
+            <p class="hero-subtitle">Découvrez tous les cours et tutoriels de développement web de notre wiki collaboratif</p>
         </section>
 
-        <section class="progress-section">
-            <h3>📊 Progression du Wiki</h3>
-            <div class="progress-stats">
-                <div class="progress-item">
-                    <span class="progress-number" id="available-courses">3</span>
+        <section class="progress-section" aria-labelledby="progress-title">
+            <header>
+                <h2 id="progress-title" class="section-title">📊 Progression du Wiki</h2>
+                <p class="section-subtitle">Suivez l'évolution de notre wiki collaboratif en temps réel</p>
+            </header>
+            <div class="progress-stats" role="list">
+                <div class="progress-item" role="listitem">
+                    <span class="progress-number" id="available-courses" aria-label="Nombre de cours disponibles">3</span>
                     <div class="progress-label">Cours disponibles</div>
                 </div>
-                <div class="progress-item">
-                    <span class="progress-number" id="total-courses">12</span>
+                <div class="progress-item" role="listitem">
+                    <span class="progress-number" id="total-courses" aria-label="Nombre total de cours prévus">12</span>
                     <div class="progress-label">Cours prévus</div>
                 </div>
-                <div class="progress-item">
-                    <span class="progress-number" id="contributors">20</span>
+                <div class="progress-item" role="listitem">
+                    <span class="progress-number" id="contributors" aria-label="Nombre de contributeurs">20</span>
                     <div class="progress-label">Contributeurs</div>
                 </div>
-                <div class="progress-item">
-                    <span class="progress-number" id="completion">25%</span>
+                <div class="progress-item" role="listitem">
+                    <span class="progress-number" id="completion" aria-label="Pourcentage d'avancement">25%</span>
                     <div class="progress-label">Avancement</div>
                 </div>
             </div>
         </section>
 
-        <section class="content">
-            <h3>🚀 Cours Fondamentaux</h3>
+        <section class="content" aria-labelledby="fundamental-courses-title">
+            <header>
+                <h2 id="fundamental-courses-title" class="section-title">🚀 Cours Fondamentaux</h2>
+            </header>
             <div class="course-grid">
-                <div class="course-card">
-                    <div class="course-header">
-                        <h4 class="course-title">
+                <article class="course-card">
+                    <header class="course-header">
+                        <h3 class="course-title">
                             🌐 Bases HTML
                             <span class="status-badge status-in-progress">En cours</span>
-                        </h4>
+                        </h3>
                         <div class="course-status">Dernière mise à jour : En développement</div>
-                    </div>
+                    </header>
                     <div class="course-content">
                         <p class="course-description">
                             Apprenez les fondamentaux du HTML : structure, balises essentielles, sémantique et bonnes pratiques.
@@ -231,18 +76,21 @@
                             <li>Liens et images</li>
                             <li>Listes et tableaux</li>
                         </ul>
-                        <a href="html-basics.html" class="course-link">Accéder au cours</a>
+                        <a href="html-basics.html" class="course-link" aria-describedby="html-course-desc">
+                            Accéder au cours
+                        </a>
+                        <small id="html-course-desc" class="sr-only">Accéder au cours sur les bases HTML</small>
                     </div>
-                </div>
+                </article>
 
-                <div class="course-card">
-                    <div class="course-header">
-                        <h4 class="course-title">
+                <article class="course-card">
+                    <header class="course-header">
+                        <h3 class="course-title">
                             🎨 Guide CSS
                             <span class="status-badge status-in-progress">En cours</span>
-                        </h4>
+                        </h3>
                         <div class="course-status">Dernière mise à jour : En développement</div>
-                    </div>
+                    </header>
                     <div class="course-content">
                         <p class="course-description">
                             Maîtrisez les styles CSS : sélecteurs, propriétés, layouts et responsive design.
@@ -253,18 +101,21 @@
                             <li>Flexbox et CSS Grid</li>
                             <li>Design responsive</li>
                         </ul>
-                        <a href="css-guide.html" class="course-link">Accéder au cours</a>
+                        <a href="css-guide.html" class="course-link" aria-describedby="css-course-desc">
+                            Accéder au cours
+                        </a>
+                        <small id="css-course-desc" class="sr-only">Accéder au cours sur le guide CSS</small>
                     </div>
-                </div>
+                </article>
 
-                <div class="course-card">
-                    <div class="course-header">
-                        <h4 class="course-title">
+                <article class="course-card">
+                    <header class="course-header">
+                        <h3 class="course-title">
                             ⚡ Introduction JavaScript
                             <span class="status-badge status-in-progress">En cours</span>
-                        </h4>
+                        </h3>
                         <div class="course-status">Dernière mise à jour : En développement</div>
-                    </div>
+                    </header>
                     <div class="course-content">
                         <p class="course-description">
                             Découvrez JavaScript : variables, fonctions, DOM et interactivité web.
@@ -275,12 +126,20 @@
                             <li>Manipulation du DOM</li>
                             <li>Interactivité utilisateur</li>
                         </ul>
-                        <a href="js-intro.html" class="course-link">Accéder au cours</a>
+                        <a href="js-intro.html" class="course-link" aria-describedby="js-course-desc">
+                            Accéder au cours
+                        </a>
+                        <small id="js-course-desc" class="sr-only">Accéder au cours d'introduction JavaScript</small>
                     </div>
-                </div>
+                </article>
             </div>
 
-            <h3>🔥 Cours Avancés</h3>
+        </section>
+
+        <section class="content" aria-labelledby="advanced-courses-title">
+            <header>
+                <h2 id="advanced-courses-title" class="section-title">🔥 Cours Avancés</h2>
+            </header>
             <div class="course-grid">
                 <div class="course-card">
                     <div class="course-header">
@@ -419,18 +278,39 @@
             </div>
         </section>
 
-        <section class="content">
-            <div class="card">
-                <h3>🤝 Contribuer au Wiki</h3>
-                <p>Ce wiki est collaboratif ! Chaque cours est créé par les étudiants de la classe.</p>
-                <p><strong>Comment contribuer :</strong></p>
-                <ul>
-                    <li>Choisissez une issue sur GitHub correspondant à un cours à créer</li>
-                    <li>Forkez le repository et créez votre branche</li>
-                    <li>Développez le contenu du cours avec exemples et exercices</li>
-                    <li>Soumettez une Pull Request pour review</li>
-                </ul>
-                <a href="https://github.com/baptistevasseur/tp-git/issues" class="btn">Voir les issues disponibles</a>
+        <section class="getting-started" aria-labelledby="contribute-title">
+            <div class="container">
+                <header class="section-header">
+                    <h2 id="contribute-title" class="section-title">🤝 Contribuer au Wiki</h2>
+                    <p class="section-subtitle">Ce wiki est collaboratif ! Chaque cours est créé par les étudiants de la classe.</p>
+                </header>
+                <div class="steps-grid">
+                    <div class="step">
+                        <div class="step-number" aria-hidden="true">1</div>
+                        <h3>Choisissez une issue</h3>
+                        <p>Sélectionnez une issue sur GitHub correspondant à un cours à créer</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number" aria-hidden="true">2</div>
+                        <h3>Forkez le projet</h3>
+                        <p>Créez votre copie du repository et votre branche de travail</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number" aria-hidden="true">3</div>
+                        <h3>Développez le contenu</h3>
+                        <p>Créez le cours avec exemples et exercices pratiques</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number" aria-hidden="true">4</div>
+                        <h3>Soumettez votre PR</h3>
+                        <p>Partagez votre contribution pour review et validation</p>
+                    </div>
+                </div>
+                <div class="cta-section">
+                    <a href="https://github.com/baptistevasseur/tp-git/issues" class="btn btn-primary btn-large" target="_blank" rel="noopener noreferrer">
+                        Voir les issues disponibles
+                    </a>
+                </div>
             </div>
         </section>
     </main>

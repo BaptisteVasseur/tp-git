@@ -23,30 +23,38 @@
     </header>
 
     <main>
-        <section class="hero">
-            <h2>Bases HTML 🌐</h2>
-            <p>Découvrez les fondamentaux du langage de balisage HTML</p>
+        <section class="hero" aria-labelledby="html-hero-title">
+            <h1 id="html-hero-title">Bases HTML 🌐</h1>
+            <p class="hero-subtitle">Découvrez les fondamentaux du langage de balisage HTML</p>
         </section>
 
-        <section class="content">
-            <div class="card">
-                <h3>🚧 Page en construction</h3>
-                <p>Cette page sera complétée par les contributions des étudiants !</p>
-                <p><strong>Votre mission :</strong> Ajouter du contenu sur les bases HTML.</p>
-                
-                <h4>Suggestions de contenu à ajouter :</h4>
-                <ul>
-                    <li>Structure de base d'un document HTML</li>
-                    <li>Balises essentielles (h1-h6, p, div, span)</li>
-                    <li>Liens et images</li>
-                    <li>Listes ordonnées et non ordonnées</li>
-                    <li>Tableaux</li>
-                    <li>Formulaires</li>
-                    <li>Balises sémantiques HTML5</li>
-                </ul>
-                
-                <a href="https://github.com/baptistevasseur/tp-git/issues" class="btn">Contribuer maintenant</a>
-            </div>
+        <section class="content" aria-labelledby="construction-title">
+            <article class="card">
+                <header>
+                    <h2 id="construction-title" class="section-title">🚧 Page en construction</h2>
+                </header>
+                <div class="card-content">
+                    <p>Cette page sera complétée par les contributions des étudiants !</p>
+                    <p><strong>Votre mission :</strong> Ajouter du contenu sur les bases HTML.</p>
+                    
+                    <h3>Suggestions de contenu à ajouter :</h3>
+                    <ul class="course-topics">
+                        <li>Structure de base d'un document HTML</li>
+                        <li>Balises essentielles (h1-h6, p, div, span)</li>
+                        <li>Liens et images</li>
+                        <li>Listes ordonnées et non ordonnées</li>
+                        <li>Tableaux</li>
+                        <li>Formulaires</li>
+                        <li>Balises sémantiques HTML5</li>
+                    </ul>
+                    
+                    <div class="cta-section">
+                        <a href="https://github.com/baptistevasseur/tp-git/issues" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                            Contribuer maintenant
+                        </a>
+                    </div>
+                </div>
+            </article>
         </section>
     </main>
 

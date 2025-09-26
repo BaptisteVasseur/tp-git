@@ -23,31 +23,39 @@
     </header>
 
     <main>
-        <section class="hero">
-            <h2>Introduction JavaScript ⚡</h2>
-            <p>Ajoutez de l'interactivité à vos pages web</p>
+        <section class="hero" aria-labelledby="js-hero-title">
+            <h1 id="js-hero-title">Introduction JavaScript ⚡</h1>
+            <p class="hero-subtitle">Ajoutez de l'interactivité à vos pages web</p>
         </section>
 
-        <section class="content">
-            <div class="card">
-                <h3>🚧 Page en construction</h3>
-                <p>Cette page sera complétée par les contributions des étudiants !</p>
-                <p><strong>Votre mission :</strong> Ajouter du contenu sur JavaScript.</p>
-                
-                <h4>Suggestions de contenu à ajouter :</h4>
-                <ul>
-                    <li>Variables et types de données</li>
-                    <li>Fonctions</li>
-                    <li>Manipulation du DOM</li>
-                    <li>Événements</li>
-                    <li>Conditions et boucles</li>
-                    <li>Objets et tableaux</li>
-                    <li>Fetch API</li>
-                    <li>ES6+ features</li>
-                </ul>
-                
-                <a href="https://github.com/baptistevasseur/tp-git/issues" class="btn">Contribuer maintenant</a>
-            </div>
+        <section class="content" aria-labelledby="js-construction-title">
+            <article class="card">
+                <header>
+                    <h2 id="js-construction-title" class="section-title">🚧 Page en construction</h2>
+                </header>
+                <div class="card-content">
+                    <p>Cette page sera complétée par les contributions des étudiants !</p>
+                    <p><strong>Votre mission :</strong> Ajouter du contenu sur JavaScript.</p>
+                    
+                    <h3>Suggestions de contenu à ajouter :</h3>
+                    <ul class="course-topics">
+                        <li>Variables et types de données</li>
+                        <li>Fonctions</li>
+                        <li>Manipulation du DOM</li>
+                        <li>Événements</li>
+                        <li>Conditions et boucles</li>
+                        <li>Objets et tableaux</li>
+                        <li>Fetch API</li>
+                        <li>ES6+ features</li>
+                    </ul>
+                    
+                    <div class="cta-section">
+                        <a href="https://github.com/baptistevasseur/tp-git/issues" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                            Contribuer maintenant
+                        </a>
+                    </div>
+                </div>
+            </article>
         </section>
     </main>
 

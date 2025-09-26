@@ -23,31 +23,39 @@
     </header>
 
     <main>
-        <section class="hero">
-            <h2>Guide CSS 🎨</h2>
-            <p>Apprenez à styliser vos pages web avec CSS</p>
+        <section class="hero" aria-labelledby="css-hero-title">
+            <h1 id="css-hero-title">Guide CSS 🎨</h1>
+            <p class="hero-subtitle">Apprenez à styliser vos pages web avec CSS</p>
         </section>
 
-        <section class="content">
-            <div class="card">
-                <h3>🚧 Page en construction</h3>
-                <p>Cette page sera complétée par les contributions des étudiants !</p>
-                <p><strong>Votre mission :</strong> Ajouter du contenu sur CSS.</p>
-                
-                <h4>Suggestions de contenu à ajouter :</h4>
-                <ul>
-                    <li>Syntaxe CSS de base</li>
-                    <li>Sélecteurs CSS</li>
-                    <li>Propriétés de texte et de couleur</li>
-                    <li>Box model</li>
-                    <li>Flexbox</li>
-                    <li>CSS Grid</li>
-                    <li>Responsive design</li>
-                    <li>Animations CSS</li>
-                </ul>
-                
-                <a href="https://github.com/baptistevasseur/tp-git/issues" class="btn">Contribuer maintenant</a>
-            </div>
+        <section class="content" aria-labelledby="css-construction-title">
+            <article class="card">
+                <header>
+                    <h2 id="css-construction-title" class="section-title">🚧 Page en construction</h2>
+                </header>
+                <div class="card-content">
+                    <p>Cette page sera complétée par les contributions des étudiants !</p>
+                    <p><strong>Votre mission :</strong> Ajouter du contenu sur CSS.</p>
+                    
+                    <h3>Suggestions de contenu à ajouter :</h3>
+                    <ul class="course-topics">
+                        <li>Syntaxe CSS de base</li>
+                        <li>Sélecteurs CSS</li>
+                        <li>Propriétés de texte et de couleur</li>
+                        <li>Box model</li>
+                        <li>Flexbox</li>
+                        <li>CSS Grid</li>
+                        <li>Responsive design</li>
+                        <li>Animations CSS</li>
+                    </ul>
+                    
+                    <div class="cta-section">
+                        <a href="https://github.com/baptistevasseur/tp-git/issues" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                            Contribuer maintenant
+                        </a>
+                    </div>
+                </div>
+            </article>
         </section>
     </main>
 
