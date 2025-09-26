@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Index des Cours - Wiki de Classe</title>
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" / />
+    <link rel="stylesheet" href="../css/icons.css" />
     <style>
       .course-grid {
         display: grid;
@@ -171,13 +172,18 @@
     </style>
   </head>
   <body>
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/contraste.css" />
-    <link rel="stylesheet" href="../css/cours.css" />
     <header>
       <nav>
         <div class="logo">
-          <h1>📚 Wiki de Classe</h1>
+          <h1>
+            <svg
+              class="icon icon--md nav-icon icon--primary"
+              aria-hidden="true"
+            >
+              <use href="#icon-courses"></use>
+            </svg>
+            Wiki de Classe
+          </h1>
         </div>
         <ul class="nav-links">
           <li><a href="../index.html">Accueil</a></li>
@@ -187,16 +193,17 @@
           <li><a href="js-intro.html">JavaScript</a></li>
           <li><a href="about.html">À propos</a></li>
         </ul>
-
-        <a href="#" onclick="toggleContraste()"
-          ><img id="toggleConst" src="/assets/images/visible.png" alt=""
-        /></a>
       </nav>
     </header>
 
     <main>
       <section class="hero">
-        <h2>📖 Index des Cours Disponibles</h2>
+        <h2>
+          <svg class="icon icon--lg nav-icon icon--primary" aria-hidden="true">
+            <use href="#icon-courses"></use>
+          </svg>
+          Index des Cours Disponibles
+        </h2>
         <p>
           Découvrez tous les cours et tutoriels de développement web de notre
           wiki collaboratif
@@ -204,7 +211,15 @@
       </section>
 
       <section class="progress-section">
-        <h3>📊 Progression du Wiki</h3>
+        <h3>
+          <svg
+            class="icon icon--md nav-icon icon--secondary"
+            aria-hidden="true"
+          >
+            <use href="#icon-info"></use>
+          </svg>
+          Progression du Wiki
+        </h3>
         <div class="progress-stats">
           <div class="progress-item">
             <span class="progress-number" id="available-courses">3</span>
@@ -226,12 +241,23 @@
       </section>
 
       <section class="content">
-        <h3>🚀 Cours Fondamentaux</h3>
+        <h3>
+          <svg class="icon icon--md nav-icon icon--primary" aria-hidden="true">
+            <use href="#icon-courses"></use>
+          </svg>
+          Cours Fondamentaux
+        </h3>
         <div class="course-grid">
           <div class="course-card">
             <div class="course-header">
               <h4 class="course-title">
-                🌐 Bases HTML
+                <svg
+                  class="icon icon--md nav-icon icon--primary"
+                  aria-hidden="true"
+                >
+                  <use href="#icon-html"></use>
+                </svg>
+                Bases HTML
                 <span class="status-badge status-in-progress">En cours</span>
               </h4>
               <div class="course-status">
@@ -258,7 +284,13 @@
           <div class="course-card">
             <div class="course-header">
               <h4 class="course-title">
-                🎨 Guide CSS
+                <svg
+                  class="icon icon--md nav-icon icon--secondary"
+                  aria-hidden="true"
+                >
+                  <use href="#icon-css"></use>
+                </svg>
+                Guide CSS
                 <span class="status-badge status-in-progress">En cours</span>
               </h4>
               <div class="course-status">
@@ -283,7 +315,13 @@
           <div class="course-card">
             <div class="course-header">
               <h4 class="course-title">
-                ⚡ Introduction JavaScript
+                <svg
+                  class="icon icon--md nav-icon icon--secondary"
+                  aria-hidden="true"
+                >
+                  <use href="#icon-js"></use>
+                </svg>
+                Introduction JavaScript
                 <span class="status-badge status-in-progress">En cours</span>
               </h4>
               <div class="course-status">
@@ -306,12 +344,23 @@
           </div>
         </div>
 
-        <h3>🔥 Cours Avancés</h3>
+        <h3>
+          <svg class="icon icon--md nav-icon icon--primary" aria-hidden="true">
+            <use href="#icon-grid"></use>
+          </svg>
+          Cours Avancés
+        </h3>
         <div class="course-grid">
           <div class="course-card">
             <div class="course-header">
               <h4 class="course-title">
-                📐 CSS Grid & Flexbox
+                <svg
+                  class="icon icon--md nav-icon icon--primary"
+                  aria-hidden="true"
+                >
+                  <use href="#icon-grid"></use>
+                </svg>
+                CSS Grid & Flexbox
                 <span class="status-badge status-coming-soon">Bientôt</span>
               </h4>
               <div class="course-status">Contribution attendue</div>
@@ -334,7 +383,13 @@
           <div class="course-card">
             <div class="course-header">
               <h4 class="course-title">
-                📱 Responsive Design
+                <svg
+                  class="icon icon--md nav-icon icon--secondary"
+                  aria-hidden="true"
+                >
+                  <use href="#icon-info"></use>
+                </svg>
+                Responsive Design
                 <span class="status-badge status-coming-soon">Bientôt</span>
               </h4>
               <div class="course-status">Contribution attendue</div>
@@ -357,7 +412,13 @@
           <div class="course-card">
             <div class="course-header">
               <h4 class="course-title">
-                🎛️ JavaScript Avancé
+                <svg
+                  class="icon icon--md nav-icon icon--secondary"
+                  aria-hidden="true"
+                >
+                  <use href="#icon-js"></use>
+                </svg>
+                JavaScript Avancé
                 <span class="status-badge status-coming-soon">Bientôt</span>
               </h4>
               <div class="course-status">Contribution attendue</div>
@@ -378,12 +439,26 @@
           </div>
         </div>
 
-        <h3>🛠️ Outils et Méthodologie</h3>
+        <h3>
+          <svg
+            class="icon icon--md nav-icon icon--secondary"
+            aria-hidden="true"
+          >
+            <use href="#icon-info"></use>
+          </svg>
+          Outils et Méthodologie
+        </h3>
         <div class="course-grid">
           <div class="course-card">
             <div class="course-header">
               <h4 class="course-title">
-                🔧 Git & GitHub
+                <svg
+                  class="icon icon--md nav-icon icon--secondary"
+                  aria-hidden="true"
+                >
+                  <use href="#icon-info"></use>
+                </svg>
+                Git & GitHub
                 <span class="status-badge status-coming-soon">Bientôt</span>
               </h4>
               <div class="course-status">Contribution attendue</div>
@@ -406,7 +481,13 @@
           <div class="course-card">
             <div class="course-header">
               <h4 class="course-title">
-                ♿ Accessibilité Web
+                <svg
+                  class="icon icon--md nav-icon icon--secondary"
+                  aria-hidden="true"
+                >
+                  <use href="#icon-info"></use>
+                </svg>
+                Accessibilité Web
                 <span class="status-badge status-coming-soon">Bientôt</span>
               </h4>
               <div class="course-status">Contribution attendue</div>
@@ -429,7 +510,13 @@
           <div class="course-card">
             <div class="course-header">
               <h4 class="course-title">
-                🚀 Performance Web
+                <svg
+                  class="icon icon--md nav-icon icon--secondary"
+                  aria-hidden="true"
+                >
+                  <use href="#icon-info"></use>
+                </svg>
+                Performance Web
                 <span class="status-badge status-coming-soon">Bientôt</span>
               </h4>
               <div class="course-status">Contribution attendue</div>
@@ -453,7 +540,15 @@
 
       <section class="content">
         <div class="card">
-          <h3>🤝 Contribuer au Wiki</h3>
+          <h3>
+            <svg
+              class="icon icon--md nav-icon icon--primary"
+              aria-hidden="true"
+            >
+              <use href="#icon-contribute"></use>
+            </svg>
+            Contribuer au Wiki
+          </h3>
           <p>
             Ce wiki est collaboratif ! Chaque cours est créé par les étudiants
             de la classe.
@@ -652,5 +747,6 @@
 
     <script src="../js/contraste.js"></script>
     <script src="../js/cours.js"></script>
+    <script src="../assets/js/icons.js"></script>
   </body>
 </html>
