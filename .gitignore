@@ -70,3 +70,8 @@ build/
 *.ntvs*
 *.njsproj
 *.sln
+
+# SCSS files
+*.map
+*.scss
+scss/
