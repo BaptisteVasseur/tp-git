@@ -26,47 +26,110 @@
     </header>
 
     <main>
-        <section class="hero">
-            <h2>Bienvenue dans notre Wiki collaboratif ! 🚀</h2>
-            <p>Un projet étudiant pour apprendre Git, GitHub et le développement web.</p>
+        <section class="hero" aria-labelledby="hero-title">
+            <h1 id="hero-title">Bienvenue dans notre Wiki collaboratif ! 🚀</h1>
+            <p class="hero-subtitle">Un projet étudiant pour apprendre Git, GitHub et le développement web.</p>
         </section>
 
-        <section class="content">
+        <section class="features" aria-labelledby="features-title">
+            <h2 id="features-title" class="section-title">Découvrez notre plateforme</h2>
             <div class="card-grid">
-                <div class="card">
-                    <h3>📖 Cours Disponibles</h3>
-                    <p>Découvrez tous les cours de développement web créés par vos camarades.</p>
-                    <a href="pages/index.html" class="btn">Voir tous les cours</a>
-                </div>
+                <article class="feature-card">
+                    <header class="card-header">
+                        <div class="card-icon" aria-hidden="true">📖</div>
+                        <h3>Cours Disponibles</h3>
+                    </header>
+                    <div class="card-content">
+                        <p>Découvrez tous les cours de développement web créés par vos camarades.</p>
+                        <a href="pages/index.html" class="btn btn-primary" aria-describedby="courses-desc">
+                            Voir tous les cours
+                        </a>
+                        <small id="courses-desc" class="sr-only">Accéder à la liste complète des cours disponibles</small>
+                    </div>
+                </article>
 
-                <div class="card">
-                    <h3>🔧 Contributions</h3>
-                    <p>Chaque étudiant peut ajouter sa propre page et améliorer le contenu existant.</p>
-                    <a href="https://github.com/baptistevasseur/tp-git/issues" class="btn">Voir les issues</a>
-                </div>
+                <article class="feature-card">
+                    <header class="card-header">
+                        <div class="card-icon" aria-hidden="true">🔧</div>
+                        <h3>Contributions</h3>
+                    </header>
+                    <div class="card-content">
+                        <p>Chaque étudiant peut ajouter sa propre page et améliorer le contenu existant.</p>
+                        <a href="https://github.com/baptistevasseur/tp-git/issues" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" aria-describedby="issues-desc">
+                            Voir les issues
+                        </a>
+                        <small id="issues-desc" class="sr-only">Ouvre GitHub dans un nouvel onglet</small>
+                    </div>
+                </article>
 
-                <div class="card">
-                    <h3>📝 Comment contribuer</h3>
-                    <p>Suivez les instructions du README pour faire votre première contribution.</p>
-                    <a href="https://github.com/baptistevasseur/tp-git" class="btn">Repository GitHub</a>
+                <article class="feature-card">
+                    <header class="card-header">
+                        <div class="card-icon" aria-hidden="true">📝</div>
+                        <h3>Comment contribuer</h3>
+                    </header>
+                    <div class="card-content">
+                        <p>Suivez les instructions du README pour faire votre première contribution.</p>
+                        <a href="https://github.com/baptistevasseur/tp-git" class="btn btn-accent" target="_blank" rel="noopener noreferrer" aria-describedby="repo-desc">
+                            Repository GitHub
+                        </a>
+                        <small id="repo-desc" class="sr-only">Ouvre le repository GitHub dans un nouvel onglet</small>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="stats" aria-labelledby="stats-title">
+            <header class="stats-header">
+                <h2 id="stats-title" class="section-title">📊 Statistiques du projet</h2>
+                <p class="stats-subtitle">Suivez l'évolution de notre wiki collaboratif en temps réel</p>
+            </header>
+            <div class="stats-grid" role="list">
+                <div class="stat" role="listitem">
+                    <span class="stat-number" aria-label="Nombre de contributeurs">3</span>
+                    <span class="stat-label">Contributeurs</span>
+                </div>
+                <div class="stat" role="listitem">
+                    <span class="stat-number" aria-label="Nombre de pages créées">9</span>
+                    <span class="stat-label">Pages créées</span>
+                </div>
+                <div class="stat" role="listitem">
+                    <span class="stat-number" aria-label="Nombre de pull requests">12</span>
+                    <span class="stat-label">Pull Requests</span>
+                </div>
+                <div class="stat" role="listitem">
+                    <span class="stat-number" aria-label="Pourcentage d'avancement">75%</span>
+                    <span class="stat-label">Avancement</span>
                 </div>
             </div>
         </section>
 
-        <section class="stats">
-            <h3>📊 Statistiques du projet</h3>
-            <div class="stats-grid">
-                <div class="stat">
-                    <span class="stat-number">0</span>
-                    <span class="stat-label">Contributeurs</span>
+        <section class="getting-started" aria-labelledby="getting-started-title">
+            <div class="container">
+                <header class="section-header">
+                    <h2 id="getting-started-title" class="section-title">🚀 Commencer maintenant</h2>
+                    <p class="section-subtitle">Rejoignez la communauté et contribuez à notre wiki</p>
+                </header>
+                <div class="steps-grid">
+                    <div class="step">
+                        <div class="step-number" aria-hidden="true">1</div>
+                        <h3>Forkez le projet</h3>
+                        <p>Créez votre propre copie du repository</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number" aria-hidden="true">2</div>
+                        <h3>Choisissez une issue</h3>
+                        <p>Sélectionnez un cours à créer ou améliorer</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number" aria-hidden="true">3</div>
+                        <h3>Soumettez votre PR</h3>
+                        <p>Partagez votre contribution avec la communauté</p>
+                    </div>
                 </div>
-                <div class="stat">
-                    <span class="stat-number">0</span>
-                    <span class="stat-label">Pages créées</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">0</span>
-                    <span class="stat-label">Pull Requests</span>
+                <div class="cta-section">
+                    <a href="https://github.com/baptistevasseur/tp-git/fork" class="btn btn-primary btn-large" target="_blank" rel="noopener noreferrer">
+                        Forker le projet
+                    </a>
                 </div>
             </div>
         </section>
