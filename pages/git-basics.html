@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guide Git et GitHub - Wiki de Classe</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <style>
+      .card {
+        margin-bottom: 2rem; /* espacement vertical entre cards */
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <h1>📚 Wiki de Classe</h1>
+        </div>
+        <ul class="nav-links">
+          <li><a href="../index.html">Accueil</a></li>
+          <li><a href="index.html">Cours</a></li>
+          <li><a href="html-basics.html">HTML</a></li>
+          <li><a href="css-guide.html">CSS</a></li>
+          <li><a href="git-guide.html" class="active">Git & GitHub</a></li>
+          <li><a href="js-intro.html">JavaScript</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h2>Guide Git et GitHub 🧑‍💻</h2>
+        <p>Apprenez à utiliser Git et GitHub pour collaborer efficacement</p>
+      </section>
+
+      <section class="content">
+        <div class="card">
+          <h3>🚧 Page en construction</h3>
+          <p>Cette page sera complétée par les contributions des étudiants !</p>
+          <p>
+            <strong>Votre mission :</strong> Ajouter du contenu sur Git et
+            GitHub.
+          </p>
+
+          <h4>Suggestions de contenu à ajouter :</h4>
+          <ul>
+            <li>Commandes Git essentielles</li>
+            <li>Workflow GitHub</li>
+            <li>Collaboration et Pull Requests</li>
+            <li>Bonnes pratiques Git</li>
+            <li>Résolution de conflits</li>
+          </ul>
+
+          <a href="https://github.com/baptistevasseur/tp-git/issues" class="btn"
+            >Contribuer maintenant</a
+          >
+        </div>
+
+        <!-- Contenu pédagogique Git & GitHub -->
+        <div class="card">
+          <h3>Commandes Git essentielles</h3>
+          <ul>
+            <li><code>git init</code> : Initialise un dépôt Git local</li>
+            <li><code>git clone &lt;url&gt;</code> : Clone un dépôt distant</li>
+            <li>
+              <code>git status</code> : Affiche l'état des fichiers dans le
+              dépôt
+            </li>
+            <li>
+              <code>git add &lt;fichiers&gt;</code> : Ajoute des fichiers à
+              l'index pour le commit
+            </li>
+            <li>
+              <code>git commit -m "message"</code> : Enregistre les changements
+              avec un message
+            </li>
+            <li>
+              <code>git push</code> : Envoie les commits vers le dépôt distant
+            </li>
+            <li>
+              <code>git pull</code> : Récupère et fusionne les modifications du
+              dépôt distant
+            </li>
+            <li><code>git branch</code> : Liste les branches locales</li>
+            <li>
+              <code>git checkout &lt;branche&gt;</code> : Bascule sur une
+              branche
+            </li>
+            <li>
+              <code>git merge &lt;branche&gt;</code> : Fusionne une branche dans
+              la branche courante
+            </li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Workflow GitHub</h3>
+          <ol>
+            <li>
+              Cloner le dépôt du projet : <code>git clone &lt;url&gt;</code>
+            </li>
+            <li>
+              Créer une branche dédiée :
+              <code>git checkout -b ma-fonctionnalite</code>
+            </li>
+            <li>Travailler localement et committer souvent :</li>
+            <pre>
+git add .
+git commit -m "Message clair"</pre
+            >
+            <li>
+              Envoyer la branche sur GitHub :
+              <code>git push origin ma-fonctionnalite</code>
+            </li>
+            <li>Créer une Pull Request (PR) pour proposer les changements</li>
+            <li>
+              Une fois validée, fusionner la PR dans la branche principale
+            </li>
+          </ol>
+        </div>
+
+        <div class="card">
+          <h3>Collaboration et Pull Requests (PR)</h3>
+          <p>Une PR permet de :</p>
+          <ul>
+            <li>Discuter et revoir le code avant intégration</li>
+            <li>Commenter pour suggérer des améliorations</li>
+            <li>Vérifier la qualité et détecter des erreurs</li>
+          </ul>
+          <p>
+            Avant de créer une PR, synchroniser la branche principale :
+            <code>git pull origin main</code>
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Bonnes pratiques</h3>
+          <ul>
+            <li>Faire des commits fréquents avec des messages explicites</li>
+            <li>Travailler dans des branches dédiées</li>
+            <li>Utiliser les PR pour la revue de code</li>
+            <li>Mettre à jour régulièrement sa branche</li>
+            <li>
+              Utiliser un fichier <code>.gitignore</code> pour exclure les
+              fichiers inutiles
+            </li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Résolution de conflits</h3>
+          <p>En cas de conflits lors d'une fusion :</p>
+          <ol>
+            <li>
+              Identifier les fichiers en conflit : <code>git status</code>
+            </li>
+            <li>
+              Éditer les fichiers pour résoudre les conflits (chercher les
+              marqueurs <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>,
+              <code>=======</code>, <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>)
+            </li>
+            <li>Choisir ou fusionner les changements manuellement</li>
+            <li>
+              Faire un <code>git add &lt;fichiers&gt;</code> sur les fichiers
+              corrigés
+            </li>
+            <li>Finaliser avec un <code>git commit</code></li>
+          </ol>
+          <p>
+            Utiliser des outils graphiques comme <code>git mergetool</code> peut
+            faciliter cette étape.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Wiki de Classe - Projet pédagogique Git/GitHub</p>
+      <p>Fait avec ❤️ par les étudiants</p>
+    </footer>
+  </body>
+</html>
