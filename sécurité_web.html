@@ -1,53 +1,176 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sécurité Web - Bonnes pratiques</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f9fafb;
-      color: #1f2937;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background: #1e3a8a;
-      color: #fff;
-      padding: 1.5rem;
-      text-align: center;
-    }
-    h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
-    main {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 1rem;
-    }
-    section {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-    }
-    h2 {
-      color: #1e40af;
-      margin-top: 0;
-    }
-    h3 {
-      margin-bottom: 0.3rem;
-      color: #374151;
-    }
-    ul {
-      padding-left: 1.2rem;
-    }
-    li {
-      margin-bottom: 0.4rem;
-    }
-    .check {
-      color: #16a34a;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sécurité Web - Bonnes pratiques</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f9fafb;
+        color: #1f2937;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        background: #1e3a8a;
+        color: #fff;
+        padding: 1.5rem;
+        text-align: center;
+      }
+      h1 {
+        margin: 0;
+        font-size: 2rem;
+      }
+      main {
+        max-width: 900px;
+        margin: 2rem auto;
+        padding: 1rem;
+      }
+      section {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+      }
+      h2 {
+        color: #1e40af;
+        margin-top: 0;
+      }
+      h3 {
+        margin-bottom: 0.3rem;
+        color: #374151;
+      }
+      ul {
+        padding-left: 1.2rem;
+      }
+      li {
+        margin-bottom: 0.4rem;
+      }
+      .check {
+        color: #16a34a;
+        font-weight: bold;
+      }
+      code {
+        background: #f3f4f6;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 1em;
+      }
+      pre {
+        background: #f3f4f6;
+        padding: 1em;
+        border-radius: 6px;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Sécurité Web : XSS, CSRF & Bonnes Pratiques</h1>
+    </header>
+    <main>
+      <section>
+        <h2>Qu'est-ce que la sécurité web&nbsp;?</h2>
+        <p>
+          La sécurité web vise à protéger les sites et applications contre les
+          attaques et vulnérabilités courantes. Deux des menaces majeures sont
+          les attaques <strong>XSS</strong> (Cross-Site Scripting) et
+          <strong>CSRF</strong> (Cross-Site Request Forgery).
+        </p>
+      </section>
+
+      <section>
+        <h2>1. XSS (Cross-Site Scripting)</h2>
+        <p>
+          <strong>XSS</strong> permet à un attaquant d'injecter du code
+          JavaScript malveillant dans une page web vue par d'autres
+          utilisateurs.
+        </p>
+        <h3>Exemple d'attaque XSS :</h3>
+        <pre><code>&lt;script&gt;alert('XSS')&lt;/script&gt;</code></pre>
+        <h3>Comment s'en protéger&nbsp;?</h3>
+        <ul>
+          <li>
+            <span class="check">✔</span> Toujours échapper les données affichées
+            (<code>HTML escape</code>).
+          </li>
+          <li>
+            <span class="check">✔</span> Utiliser des frameworks qui protègent
+            automatiquement (React, Angular, etc.).
+          </li>
+          <li>
+            <span class="check">✔</span> Désactiver l'exécution de scripts dans
+            les champs utilisateurs.
+          </li>
+          <li>
+            <span class="check">✔</span> Mettre en place une politique CSP
+            (<code>Content Security Policy</code>).
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>2. CSRF (Cross-Site Request Forgery)</h2>
+        <p>
+          <strong>CSRF</strong> consiste à tromper un utilisateur authentifié
+          pour qu'il exécute une action non désirée sur un site où il est
+          connecté.
+        </p>
+        <h3>Exemple d'attaque CSRF :</h3>
+        <pre><code>&lt;img src="https://votresite.com/delete?id=123" /&gt;</code></pre>
+        <h3>Comment s'en protéger&nbsp;?</h3>
+        <ul>
+          <li>
+            <span class="check">✔</span> Utiliser des
+            <strong>tokens CSRF</strong> dans les formulaires.
+          </li>
+          <li>
+            <span class="check">✔</span> Vérifier l'origine
+            (<code>Origin</code>, <code>Referer</code>).
+          </li>
+          <li>
+            <span class="check">✔</span> Privilégier les requêtes POST pour les
+            actions sensibles.
+          </li>
+          <li>
+            <span class="check">✔</span> Mettre en place une authentification
+            forte.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>3. Bonnes pratiques générales</h2>
+        <ul>
+          <li>
+            <span class="check">✔</span> Garder les logiciels et dépendances à
+            jour.
+          </li>
+          <li><span class="check">✔</span> Utiliser HTTPS partout.</li>
+          <li>
+            <span class="check">✔</span> Limiter les droits des utilisateurs et
+            des applications.
+          </li>
+          <li>
+            <span class="check">✔</span> Valider et filtrer toutes les entrées
+            utilisateur côté serveur.
+          </li>
+          <li>
+            <span class="check">✔</span> Sauvegarder régulièrement les données.
+          </li>
+          <li>
+            <span class="check">✔</span> Désactiver les messages d’erreur
+            détaillés en production.
+          </li>
+          <li>
+            <span class="check">✔</span> Utiliser des mots de passe forts et le
+            stockage sécurisé (hachage, salage).
+          </li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
