@@ -171,6 +171,9 @@
     </style>
   </head>
   <body>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/contraste.css" />
+    <link rel="stylesheet" href="../css/cours.css" />
     <header>
       <nav>
         <div class="logo">
@@ -181,9 +184,13 @@
           <li><a href="index.html" class="active">Cours</a></li>
           <li><a href="html-basics.html">HTML</a></li>
           <li><a href="css-guide.html">CSS</a></li>
-          <li><a href="git-basics.html">Git & GitHub</a></li>
           <li><a href="js-intro.html">JavaScript</a></li>
+          <li><a href="about.html">À propos</a></li>
         </ul>
+
+        <a href="#" onclick="toggleContraste()"
+          ><img id="toggleConst" src="/assets/images/visible.png" alt=""
+        /></a>
       </nav>
     </header>
 
@@ -467,26 +474,183 @@
       </section>
     </main>
 
-    <footer>
-      <p>&copy; 2025 Wiki de Classe - Projet pédagogique Git/GitHub</p>
-      <p>Fait avec ❤️ par les étudiants</p>
+    <footer
+      id="site-footer"
+      class="site-footer"
+      role="contentinfo"
+      aria-label="Pied de page"
+    >
+      <div class="footer-inner">
+        <!-- Liens GitHub -->
+        <nav class="footer-links" aria-label="Liens du projet">
+          <div class="links-column">
+            <h3>GitHubb</h3>
+            <ul>
+              <li>
+                <a
+                  id="repo-link"
+                  href="https://github.com/baptistevasseur/tp-git"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Dépôt du projet</a
+                >
+              </li>
+              <li>
+                <a
+                  id="org-link"
+                  href="https://github.com/baptistevasseur"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Profil / Organisation</a
+                >
+              </li>
+              <li>
+                <a
+                  id="readme-link"
+                  href="https://github.com/baptistevasseur/tp-git#readme"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >README</a
+                >
+              </li>
+              <li>
+                <a
+                  id="issues-link"
+                  href="https://github.com/baptistevasseur/tp-git/issues"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Issues</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Liens utiles (peuvent pointer vers des pages internes) -->
+          <div class="links-column">
+            <h3>Liens utiles</h3>
+            <ul>
+              <li><a href="#">Guide de style</a></li>
+              <li><a href="#">Rendu / Consignes</a></li>
+              <li><a href="#">CI / Pipeline</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact enseignant (statique HTML) -->
+          <div class="links-column contact-col">
+            <h3>Contact</h3>
+            <p id="teacher-name">Enseignant: M.Baptiste Vasseur</p>
+            <p>
+              <a id="teacher-mail" class="mail-link" href="#"
+                >Baptiste Vasseur@decode.fr</a
+              >
+            </p>
+            <!-- bouton modal disponible mais sans JS il ne s'ouvrira pas — utile quand on ajoutera le script -->
+            <button
+              id="contact-btn"
+              class="btn"
+              aria-haspopup="dialog"
+              aria-controls="contact-modal"
+            >
+              Formulaire de contact
+            </button>
+          </div>
+        </nav>
+
+        <!-- Statistiques (placeholders, remplissables par JS plus tard) -->
+        <div class="footer-stats" aria-live="polite">
+          <h3>Statistiques</h3>
+          <div class="stats-grid">
+            <div class="stat">
+              <strong id="stars">—</strong>
+              <span>Stars</span>
+            </div>
+            <div class="stat">
+              <strong id="forks">—</strong>
+              <span>Forks</span>
+            </div>
+            <div class="stat">
+              <strong id="open-issues">—</strong>
+              <span>Open issues</span>
+            </div>
+            <div class="stat">
+              <strong id="last-commit">—</strong>
+              <span>Dernier commit</span>
+            </div>
+          </div>
+
+          <!-- Icônes sociales -->
+          <div class="socials" aria-label="Réseaux sociaux">
+            <a
+              id="github-icon"
+              href="https://github.com/baptistevasseur/tp-git"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social"
+              aria-label="Voir le dépôt GitHub"
+            >
+              <!-- SVG GitHub (inline pour éviter dépendances) -->
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                role="img"
+                aria-hidden="true"
+              >
+                <path
+                  fill="currentColor"
+                  d="M12 .5C5.73.5.75 5.48.75 11.75c0 4.9 3.17 9.06 7.57 10.53.55.1.75-.24.75-.54v-1.9c-3.07.66-3.72-1.36-3.72-1.36-.5-1.28-1.22-1.62-1.22-1.62-.99-.68.08-.67.08-.67 1.09.08 1.66 1.12 1.66 1.12.97 1.66 2.55 1.18 3.17.9.1-.7.38-1.18.7-1.45-2.45-.28-5.03-1.22-5.03-5.43 0-1.2.43-2.18 1.13-2.95-.12-.28-.5-1.41.11-2.94 0 0 .92-.29 3.02 1.13A10.48 10.48 0 0112 6.8c.93.004 1.87.12 2.75.35 2.09-1.42 3.01-1.13 3.01-1.13.61 1.53.23 2.66.11 2.94.7.77 1.13 1.75 1.13 2.95 0 4.22-2.59 5.15-5.05 5.42.39.34.73 1.01.73 2.04v3.03c0 .3.2.65.76.54A11.25 11.25 0 0023.25 11.75C23.25 5.48 18.27.5 12 .5z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Markup modal (HTML seulement) : restera inerte sans JS, mais utile pour accessibilité / futur JS -->
+      <div
+        id="contact-modal"
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-hidden="true"
+        aria-labelledby="contact-title"
+      >
+        <div class="modal-inner">
+          <h2 id="contact-title">Contacter l'enseignant</h2>
+          <p id="modal-teacher">M. Dupont — dupont@ecole.fr</p>
+          <form id="contact-form">
+            <label
+              >Votre nom
+              <input name="name" required />
+            </label>
+            <label
+              >Votre email
+              <input name="email" type="email" required />
+            </label>
+            <label
+              >Message
+              <textarea name="message" rows="4" required></textarea>
+            </label>
+            <div class="modal-actions">
+              <button type="submit" class="btn-primary">Envoyer</button>
+              <button type="button" id="modal-close" class="btn">Fermer</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Version texte simple (fallback) -->
+      <div class="footer-copy">
+        <p>
+          &copy; 2025 Wiki de Classe — Projet pédagogique Git/GitHub. Fait avec
+          ♥ par les étudiants.
+        </p>
+      </div>
     </footer>
 
-    <script>
-      // Mise à jour dynamique des statistiques
-      document.addEventListener("DOMContentLoaded", function () {
-        // Compter les cours disponibles
-        const availableCourses = document.querySelectorAll(
-          ".status-in-progress, .status-available"
-        ).length;
-        const totalCourses = document.querySelectorAll(".course-card").length;
-        const completion = Math.round((availableCourses / totalCourses) * 100);
+    <div id="footer-placeholder"></div>
 
-        document.getElementById("available-courses").textContent =
-          availableCourses;
-        document.getElementById("total-courses").textContent = totalCourses;
-        document.getElementById("completion").textContent = completion + "%";
-      });
-    </script>
+    <script src="../js/contraste.js"></script>
+    <script src="../js/cours.js"></script>
   </body>
 </html>

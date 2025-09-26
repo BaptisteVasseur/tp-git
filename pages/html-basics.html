@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bases HTML - Wiki de Classe</title>
     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/contraste.css" />
   </head>
   <body>
     <header>
@@ -17,9 +18,13 @@
           <li><a href="index.html">Cours</a></li>
           <li><a href="html-basics.html" class="active">HTML</a></li>
           <li><a href="css-guide.html">CSS</a></li>
-          <li><a href="git-basics.html">Git & GitHub</a></li>
           <li><a href="js-intro.html">JavaScript</a></li>
+          <li><a href="about.html">À propos</a></li>
         </ul>
+
+        <a href="#" onclick="toggleContraste()"
+          ><img id="toggleConst" src="/assets/images/visible.png" alt=""
+        /></a>
       </nav>
     </header>
 
@@ -60,5 +65,6 @@
       <p>&copy; 2025 Wiki de Classe - Projet pédagogique Git/GitHub</p>
       <p>Fait avec ❤️ par les étudiants</p>
     </footer>
+    <script src="../js/contraste.js"></script>
   </body>
 </html>
